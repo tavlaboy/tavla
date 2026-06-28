@@ -10,74 +10,84 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
 </head>
 <body>
 
-<!-- MOBILE NAV -->
+<!-- MOBILE NAV DROPDOWN -->
 <div class="mob-nav" id="mobNav">
-  <button class="mob-close" onclick="closeMob()">&#x2715;</button>
-  <a href="#" onclick="closeMob()">Home</a>
-  <a href="#about" onclick="closeMob()">About Us</a>
-  <a href="#menu" onclick="closeMob()">Menu</a>
-  <a href="#wines" onclick="closeMob()">Wines</a>
-  <a href="#reservation" onclick="closeMob()">Book a Table</a>
-  <a href="#contact" onclick="closeMob()">Contact Us</a>
+  <nav class="mob-nav-links">
+    <a href="#" onclick="closeMob()">Home</a>
+    <a href="#about" onclick="closeMob()">About Us</a>
+    <a href="#menu" onclick="closeMob()">Menu</a>
+    <a href="#wines" onclick="closeMob()">Wines</a>
+    <a href="#reservation" onclick="closeMob()">Book a Table</a>
+    <a href="#contact" onclick="closeMob()">Contact Us</a>
+  </nav>
 </div>
 
 <!-- NAVBAR -->
 <nav class="navbar" id="navbar">
-  <a href="#" class="nav-brand">Tavla &nbsp;|&nbsp; თავლა<small>Authentic Georgian Restaurant · Tbilisi</small></a>
-  <ul class="nav-menu">
-    <li><a href="#">Home</a></li>
-    <li><a href="#about">About Us</a></li>
-    <li><a href="#menu">Menu</a></li>
-    <li><a href="#wines">Wines</a></li>
-    <li><a href="#contact">Contact Us</a></li>
-    <li><a href="#reservation" class="nav-book">Book a Table</a></li>
-  </ul>
-  <div class="hamburger" onclick="openMob()"><span></span><span></span><span></span></div>
+  <div class="navbar-inner">
+    <a href="#" class="nav-brand" aria-label="Tavla home">
+      <img src="images/tavla-nav-hero.png" alt="Tavla" class="nav-logo"/>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#wines">Wines</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+      <li><a href="#reservation" class="nav-book">Book a Table</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" onclick="toggleMob()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero" id="home">
-  <div class="hero-left">
-    <div style="max-width:520px">
-      <div class="hero-badge"><i class="fa fa-star"></i> Authentic Georgian Restaurant in Tbilisi</div>
-      <h1 class="hero-h1">
-        Tavla <em>თავლა</em> invites you to experience the true essence of <em>Georgian cuisine</em> in Tbilisi
-      </h1>
-      <p class="hero-p">
-        Since 2009, our restaurant in Tbilisi has been a leading destination for authentic Georgian cuisine, where tradition, flavour, and warm hospitality come together. We proudly serve freshly baked <a href="#menu">Khachapuri</a>, hand-folded <a href="#menu">Khinkali</a>, and expertly grilled <a href="#menu">Georgian BBQ</a>.
-      </p>
-      <div class="hero-btns">
-        <a href="#menu" class="btn btn-primary">View Menu</a>
-        <a href="#reservation" class="btn btn-outline-w">Reserve a Table</a>
-      </div>
-      <div class="hero-dishes">
-        <div class="hdish">
-          <div class="hdish-img"><img src="https://images.unsplash.com/photo-1626804475297-41608ea09aeb?w=200&q=75&auto=format&fit=crop" alt="Khachapuri"/></div>
-          <div class="hdish-stars">★★★★★</div>
-          <div class="hdish-name">Khachapuri</div>
-          <div class="hdish-sub">Georgian cheese bread</div>
-        </div>
-        <div class="hdish">
-          <div class="hdish-img"><img src="https://images.unsplash.com/photo-1576402187878-974f70c890a5?w=200&q=75&auto=format&fit=crop" alt="Khinkali"/></div>
-          <div class="hdish-stars">★★★★★</div>
-          <div class="hdish-name">Khinkali</div>
-          <div class="hdish-sub">Traditional dumplings</div>
-        </div>
-        <div class="hdish">
-          <div class="hdish-img"><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=200&q=75&auto=format&fit=crop" alt="Georgian Salad"/></div>
-          <div class="hdish-stars">★★★★★</div>
-          <div class="hdish-name">Georgian Salad</div>
-          <div class="hdish-sub">Walnut dressing</div>
+  <div class="hero-split">
+    <div class="hero-left">
+      <div style="max-width:440px">
+        <div class="hero-badge"><i class="fa fa-star"></i> Established in 2009</div>
+        <h1 class="hero-h1">
+          Tavla თავლა invites you to experience the true essence of Georgian cuisine in Tbilisi
+        </h1>
+        <p class="hero-p">
+          Since 2009, our restaurant in Tbilisi has been a leading destination for authentic Georgian cuisine, where tradition, flavour, and warm hospitality come together. We proudly serve freshly baked <a href="#menu">Khachapuri</a>, hand-folded <a href="#menu">Khinkali</a>, and expertly grilled <a href="#menu">Georgian BBQ</a>.
+        </p>
+        <div class="hero-btns">
+          <a href="#menu" class="btn btn-primary">View Menu</a>
+          <a href="#reservation" class="btn btn-outline-w">Reserve a Table</a>
         </div>
       </div>
     </div>
-  </div>
-  <div class="hero-right">
-    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&q=80&auto=format&fit=crop" alt="Tavla Restaurant Tbilisi"/>
-    <div class="hero-right-ov"></div>
+    <div class="hero-right">
+      <img src="images/tavla-hero-index.png" alt="Tavla Restaurant Tbilisi"/>
+      <div class="hero-right-ov"></div>
+      <div class="hero-dishes">
+        <div class="hdish">
+          <div class="hdish-img"><img src="https://images.unsplash.com/photo-1626804475297-41608ea09aeb?w=200&q=75&auto=format&fit=crop" alt="Khachapuri"/></div>
+          <div class="hdish-name">Khachapuri</div>
+          <div class="hdish-sub">Georgian cheese bread</div>
+          <div class="hdish-stars">★★★★★</div>
+        </div>
+        <div class="hdish">
+          <div class="hdish-img"><img src="https://images.unsplash.com/photo-1576402187878-974f70c890a5?w=200&q=75&auto=format&fit=crop" alt="Khinkali"/></div>
+          <div class="hdish-name">Khinkali</div>
+          <div class="hdish-sub">Traditional dumplings</div>
+          <div class="hdish-stars">★★★★★</div>
+        </div>
+        <div class="hdish">
+          <div class="hdish-img"><img src="./images/xbo-neknebi-ajikit.PNG" alt="Georgian Salad"/></div>
+          <div class="hdish-name">Ribs with Ajika</div>
+          <div class="hdish-sub">Walnut dressing</div>
+          <div class="hdish-stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -86,16 +96,21 @@
   <div class="container">
     <div class="about-grid">
       <div class="about-slider fi">
-        <div class="slider-main"><img id="mainImg" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80&auto=format&fit=crop" alt="Tavla interior"/></div>
+        <div class="slider-main" id="sliderMain">
+          <img src="images/about-us1.png" class="slide active" alt="Tavla interior 1"/>
+          <img src="images/about-us2.png" class="slide" alt="Tavla interior 2"/>
+          <img src="images/about-us3.png" class="slide" alt="Tavla interior 3"/>
+          <img src="images/about-us4.png" class="slide" alt="Tavla interior 4"/>
+        </div>
         <div class="slider-nav">
-          <button onclick="sNav(-1)"><i class="fa fa-chevron-left"></i></button>
-          <button onclick="sNav(1)"><i class="fa fa-chevron-right"></i></button>
+          <button onclick="sNav(-1)" aria-label="Previous"><i class="fa fa-chevron-left"></i></button>
+          <button onclick="sNav(1)" aria-label="Next"><i class="fa fa-chevron-right"></i></button>
         </div>
         <div class="slider-thumbs" id="thumbs">
-          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=200&q=60&auto=format&fit=crop" class="active" onclick="sSet(0)" alt="t0"/>
-          <img src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=200&q=60&auto=format&fit=crop" onclick="sSet(1)" alt="t1"/>
-          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=200&q=60&auto=format&fit=crop" onclick="sSet(2)" alt="t2"/>
-          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=200&q=60&auto=format&fit=crop" onclick="sSet(3)" alt="t3"/>
+          <img src="images/about-us1.png" class="active" onclick="sSet(0)" alt="t0"/>
+          <img src="images/about-us2.png" onclick="sSet(1)" alt="t1"/>
+          <img src="images/about-us3.png" onclick="sSet(2)" alt="t2"/>
+          <img src="images/about-us4.png" onclick="sSet(3)" alt="t3"/>
         </div>
       </div>
       <div class="fi">
@@ -121,7 +136,7 @@
         <a href="#reservation" class="btn btn-gold" style="margin-top:28px;display:inline-block">View Full Menu</a>
       </div>
       <div class="menu-img fi">
-        <img src="https://images.unsplash.com/photo-1626804475297-41608ea09aeb?w=700&q=80&auto=format&fit=crop" alt="Khachapuri Tavla"/>
+        <img src="images/index-menu1.png" alt="Khachapuri Tavla"/>
       </div>
     </div>
   </div>
@@ -138,7 +153,7 @@
       <a href="#reservation" class="btn btn-outline-d" style="margin-top:28px;display:inline-block">Georgian Specialities</a>
     </div>
     <div class="split-img fi">
-      <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=800&q=80&auto=format&fit=crop" alt="Georgian cuisine"/>
+      <img src="images/index-place.png" alt="Georgian cuisine"/>
     </div>
   </div>
 </div>
@@ -147,7 +162,7 @@
 <div>
   <div class="split-inner">
     <div class="split-img fi">
-      <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800&q=80&auto=format&fit=crop" alt="Highest quality"/>
+      <img src="images/index-khinkali-closeup.png" alt="Highest quality"/>
     </div>
     <div class="split-text dark fi">
       <p class="sec-label">Georgian Specialities</p>
@@ -170,7 +185,7 @@
       <a href="#reservation" class="btn btn-outline-d" style="margin-top:28px;display:inline-block">Explore Wines</a>
     </div>
     <div class="split-img fi">
-      <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=800&q=80&auto=format&fit=crop" alt="Georgian wine"/>
+      <img src="images/index-wine-collection.png" alt="Georgian wine"/>
     </div>
   </div>
 </div>
@@ -179,7 +194,7 @@
 <div>
   <div class="split-inner">
     <div class="split-img fi">
-      <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=800&q=80&auto=format&fit=crop" alt="Chef's picks"/>
+      <img src="images/index-chefs-pick.png" alt="Chef's picks"/>
     </div>
     <div class="split-text dark fi">
       <p class="sec-label">Chef's Picks</p>
@@ -250,51 +265,12 @@
   </div>
 </section>
 
-<!-- BLOG -->
-<section class="blog-sec">
-  <div class="container">
-    <div class="blog-head">
-      <div>
-        <p class="sec-label">Latest From Our Blog</p>
-        <h2 class="sec-h2">Stories of Georgian Cuisine &amp; Culture</h2>
-      </div>
-      <a href="#" class="btn btn-outline-d">View All Blogs</a>
-    </div>
-    <div class="blog-grid">
-      <div class="blog-card fi">
-        <div class="blog-img"><img src="https://images.unsplash.com/photo-1626804475297-41608ea09aeb?w=600&q=70&auto=format&fit=crop" alt="Khachapuri blog"/></div>
-        <div class="blog-info">
-          <div class="blog-tag">Georgian Food</div>
-          <div class="blog-title">The Art of Khachapuri – A Guide to Georgia's Beloved Cheese Bread</div>
-          <p class="blog-excerpt">Discover the history, regional variations, and secrets behind Georgia's most iconic dish — the Adjarian Khachapuri.</p>
-        </div>
-      </div>
-      <div class="blog-card fi">
-        <div class="blog-img"><img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=600&q=70&auto=format&fit=crop" alt="Georgian wine blog"/></div>
-        <div class="blog-info">
-          <div class="blog-tag">Georgian Wine</div>
-          <div class="blog-title">8,000 Years in the Glass – A Journey Through Georgian Winemaking</div>
-          <p class="blog-excerpt">Georgia is the cradle of wine. Learn about the ancient Qvevri tradition and the grape varieties that define the country's wine culture.</p>
-        </div>
-      </div>
-      <div class="blog-card fi">
-        <div class="blog-img"><img src="https://images.unsplash.com/photo-1576402187878-974f70c890a5?w=600&q=70&auto=format&fit=crop" alt="Khinkali blog"/></div>
-        <div class="blog-info">
-          <div class="blog-tag">Traditions</div>
-          <div class="blog-title">Khinkali – The Soul Food of the Georgian Mountains</div>
-          <p class="blog-excerpt">Hand-folded, broth-filled, and eaten with your hands — Khinkali is more than a dumpling. It's a ritual and a way of sharing.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- FOOTER -->
 <footer id="contact">
   <div class="container">
     <div class="footer-grid">
       <div>
-        <div class="foot-brand">Tavla | თავლა<small>Authentic Georgian Restaurant · Tbilisi, Georgia</small></div>
+        <div class="foot-brand"><img src="images/tavla-hero -hero.png" alt="Tavla" class="foot-logo"/></div>
         <p class="foot-about">Tavla Restaurant is a traditional Georgian restaurant in Tbilisi, Georgia, offering authentic Georgian food, Khachapuri, Khinkali, Georgian bread, BBQ, fine dining, and premium Georgian wines. Established 2009.</p>
       </div>
       <div>
@@ -337,24 +313,31 @@
 </footer>
 
 <script>
-  function openMob(){document.getElementById('mobNav').classList.add('open')}
-  function closeMob(){document.getElementById('mobNav').classList.remove('open')}
-  window.addEventListener('scroll',function(){
-    document.getElementById('navbar').style.boxShadow=window.scrollY>40?'0 2px 24px rgba(0,0,0,.3)':'none';
-  });
-  var slides=[
-    'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=800&q=80&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80&auto=format&fit=crop'
-  ];
-  var cur=0;
-  function sSet(i){
-    cur=i;
-    document.getElementById('mainImg').src=slides[i];
-    document.querySelectorAll('#thumbs img').forEach(function(t,j){t.classList.toggle('active',j===i)});
+  function toggleMob(){
+    var open=document.getElementById('mobNav').classList.toggle('open');
+    document.getElementById('hamburger').classList.toggle('active',open);
+    document.body.classList.toggle('mob-lock',open);
   }
-  function sNav(d){sSet((cur+d+slides.length)%slides.length)}
+  function openMob(){document.getElementById('mobNav').classList.add('open');document.getElementById('hamburger').classList.add('active');document.body.classList.add('mob-lock');}
+  function closeMob(){document.getElementById('mobNav').classList.remove('open');document.getElementById('hamburger').classList.remove('active');document.body.classList.remove('mob-lock');}
+  var nav=document.getElementById('navbar');
+  function updateNavState(){
+    nav.classList.toggle('scrolled',window.scrollY>20);
+  }
+  window.addEventListener('scroll',updateNavState);
+  updateNavState();
+  var cur=0;
+  var slides=document.querySelectorAll('#sliderMain .slide');
+  var thumbEls=document.querySelectorAll('#thumbs img');
+  function sSet(i){
+    slides[cur].classList.remove('active');
+    thumbEls[cur].classList.remove('active');
+    cur=(i+slides.length)%slides.length;
+    slides[cur].classList.add('active');
+    thumbEls[cur].classList.add('active');
+  }
+  function sNav(d){sSet(cur+d);}
+  var autoPlay=setInterval(function(){sSet(cur+1);},4000);
   function submitRes(e){
     e.preventDefault();
     var b=document.getElementById('resBtn');
@@ -365,6 +348,11 @@
     entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('vis')});
   },{threshold:0.1});
   document.querySelectorAll('.fi').forEach(function(el){obs.observe(el)});
+  // pause autoplay on manual interaction
+  document.querySelector('.about-slider').addEventListener('click',function(){
+    clearInterval(autoPlay);
+    autoPlay=setInterval(function(){sSet(cur+1);},5000);
+  });
 </script>
 </body>
 </html>
