@@ -353,15 +353,16 @@
       text-align: left; transition: color .2s, background .2s;
     }
     .lang-opt:hover { color: #fff; background: rgba(255,255,255,.06); }
-    .mob-lang-wrap {
+    .mob-lang-wrap { display: none; }
+    .nav-actions {
       display: none;
-      padding: 14px 28px 20px;
-      border-top: 1px solid rgba(255,255,255,.07);
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
     }
-    .mob-lang-wrap .lang-dropdown { display: inline-block; }
-    .mob-lang-wrap .lang-drop-menu { left: 0; right: auto; }
     @media(max-width:960px){
-      .mob-lang-wrap { display: block; }
+      .nav-actions { display: flex; }
+      .nav-actions .lang-drop-menu { right: 0; left: auto; }
     }
   </style>
 </head>
@@ -370,22 +371,13 @@
 <!-- MOBILE NAV DROPDOWN -->
 <div class="mob-nav" id="mobNav">
   <nav class="mob-nav-links">
-    <a href="index.html" onclick="closeMob()">Home</a>
-    <a href="index.html#about" onclick="closeMob()">About Us</a>
-    <a href="menu.html" onclick="closeMob()">Menu</a>
-    <a href="drinks.html" onclick="closeMob()">Drinks</a>
-    <a href="index.html#reservation" onclick="closeMob()">Book a Table</a>
-    <a href="index.html#contact" onclick="closeMob()">Contact Us</a>
+    <a href="index.html" onclick="closeMob()" data-ge="მთავარი" data-en="Home" data-ru="Главная">მთავარი</a>
+    <a href="index.html#about" onclick="closeMob()" data-ge="ჩვენს შესახებ" data-en="About Us" data-ru="О нас">ჩვენს შესახებ</a>
+    <a href="menu.html" onclick="closeMob()" data-ge="მენიუ" data-en="Menu" data-ru="Меню">მენიუ</a>
+    <a href="drinks.html" onclick="closeMob()" data-ge="სასმელები" data-en="Drinks" data-ru="Напитки">სასმელები</a>
+    <a href="index.html#reservation" onclick="closeMob()" data-ge="დაჯავშნა" data-en="Book a Table" data-ru="Забронировать">დაჯავშნა</a>
+    <a href="index.html#contact" onclick="closeMob()" data-ge="კონტაქტი" data-en="Contact Us" data-ru="Контакты">კონტაქტი</a>
   </nav>
-  <div class="mob-lang-wrap">
-    <div class="lang-dropdown" id="mobLangDropdown">
-      <button class="lang-current" type="button" aria-haspopup="listbox" aria-expanded="false">GE <i class="fa fa-chevron-down"></i></button>
-      <div class="lang-drop-menu" role="listbox">
-        <button type="button" class="lang-opt" data-lang="en">EN</button>
-        <button type="button" class="lang-opt" data-lang="ru">RU</button>
-      </div>
-    </div>
-  </div>
 </div>
 
 <!-- NAVBAR -->
@@ -395,11 +387,11 @@
       <img src="images/tavla-nav-hero.png" alt="Tavla" class="nav-logo"/>
     </a>
     <ul class="nav-menu">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="index.html#about">About Us</a></li>
-      <li><a href="menu.html" style="color:#fff">Menu</a></li>
-      <li><a href="drinks.html">Drinks</a></li>
-      <li><a href="index.html#contact">Contact Us</a></li>
+      <li><a href="index.html" data-ge="მთავარი" data-en="Home" data-ru="Главная">მთავარი</a></li>
+      <li><a href="index.html#about" data-ge="ჩვენს შესახებ" data-en="About Us" data-ru="О нас">ჩვენს შესახებ</a></li>
+      <li><a href="menu.html" style="color:#fff" data-ge="მენიუ" data-en="Menu" data-ru="Меню">მენიუ</a></li>
+      <li><a href="drinks.html" data-ge="სასმელები" data-en="Drinks" data-ru="Напитки">სასმელები</a></li>
+      <li><a href="index.html#contact" data-ge="კონტაქტი" data-en="Contact Us" data-ru="Контакты">კონტაქტი</a></li>
       <li class="nav-lang">
         <div class="lang-dropdown" id="langDropdown">
           <button class="lang-current" type="button" id="langCurrent" aria-haspopup="listbox" aria-expanded="false">GE <i class="fa fa-chevron-down"></i></button>
@@ -409,10 +401,19 @@
           </div>
         </div>
       </li>
-      <li><a href="index.html#reservation" class="nav-book">Book a Table</a></li>
+      <li><a href="index.html#reservation" class="nav-book" data-ge="დაჯავშნა" data-en="Book a Table" data-ru="Забронировать">დაჯავშნა</a></li>
     </ul>
-    <div class="hamburger" id="hamburger" onclick="toggleMob()">
-      <span></span><span></span><span></span>
+    <div class="nav-actions">
+      <div class="lang-dropdown" id="mobLangDropdown">
+        <button class="lang-current" type="button" aria-haspopup="listbox" aria-expanded="false">GE <i class="fa fa-chevron-down"></i></button>
+        <div class="lang-drop-menu" role="listbox">
+          <button type="button" class="lang-opt" data-lang="en">EN</button>
+          <button type="button" class="lang-opt" data-lang="ru">RU</button>
+        </div>
+      </div>
+      <div class="hamburger" id="hamburger" onclick="toggleMob()">
+        <span></span><span></span><span></span>
+      </div>
     </div>
   </div>
 </nav>

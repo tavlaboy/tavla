@@ -12,17 +12,71 @@
   <link rel="stylesheet" href="js/lenis.css" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/png" href="images/favicon.png" />
+  <style>
+    .lang-dropdown { position: relative; flex-shrink: 0; }
+    .lang-current {
+      background: none; border: none;
+      color: rgba(255,255,255,.82);
+      font-family: 'Poppins', sans-serif;
+      font-size: .7rem; font-weight: 600;
+      letter-spacing: .12em; text-transform: uppercase;
+      cursor: pointer; padding: 5px 8px;
+      display: flex; align-items: center; gap: 5px;
+      transition: color .2s;
+    }
+    .lang-current:hover { color: #fff; }
+    .lang-current i { font-size: .5rem; opacity: .55; transition: transform .2s; }
+    .lang-dropdown.open .lang-current i,
+    .lang-dropdown:hover .lang-current i { transform: rotate(180deg); }
+    .lang-drop-menu {
+      position: absolute; top: calc(100% + 6px); right: 0;
+      min-width: 54px;
+      background: rgba(14,12,10,.97);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 4px; padding: 4px 0;
+      opacity: 0; visibility: hidden;
+      transform: translateY(-4px);
+      transition: opacity .2s, transform .2s, visibility .2s;
+      z-index: 1100;
+      box-shadow: 0 8px 24px rgba(0,0,0,.35);
+    }
+    .lang-dropdown:hover .lang-drop-menu,
+    .lang-dropdown.open .lang-drop-menu {
+      opacity: 1; visibility: visible; transform: translateY(0);
+    }
+    .lang-opt {
+      display: block; width: 100%;
+      background: none; border: none;
+      color: rgba(255,255,255,.55);
+      font-family: 'Poppins', sans-serif;
+      font-size: .7rem; font-weight: 500;
+      letter-spacing: .12em; text-transform: uppercase;
+      cursor: pointer; padding: 7px 14px;
+      text-align: left; transition: color .2s, background .2s;
+    }
+    .lang-opt:hover { color: #fff; background: rgba(255,255,255,.06); }
+    .nav-actions {
+      display: none;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+    @media(max-width:960px){
+      .nav-actions { display: flex; }
+      .nav-actions .lang-drop-menu { right: 0; left: auto; }
+    }
+  </style>
 </head>
 <body style="background:#0e0c0a">
 
 <div class="mob-nav" id="mobNav">
   <nav class="mob-nav-links">
-    <a href="index.html" onclick="closeMob()">მთავარი</a>
-    <a href="about.html" onclick="closeMob()">ჩვენს შესახებ</a>
-    <a href="menu.html" onclick="closeMob()">მენიუ</a>
-    <a href="drinks.html" onclick="closeMob()">სასმელები</a>
-    <a href="index.html#reservation" onclick="closeMob()">დაჯავშნა</a>
-    <a href="index.html#contact" onclick="closeMob()">კონტაქტი</a>
+    <a href="index.html" onclick="closeMob()" data-ge="მთავარი" data-en="Home" data-ru="Главная">მთავარი</a>
+    <a href="about.html" onclick="closeMob()" data-ge="ჩვენს შესახებ" data-en="About Us" data-ru="О нас">ჩვენს შესახებ</a>
+    <a href="menu.html" onclick="closeMob()" data-ge="მენიუ" data-en="Menu" data-ru="Меню">მენიუ</a>
+    <a href="drinks.html" onclick="closeMob()" data-ge="სასმელები" data-en="Drinks" data-ru="Напитки">სასმელები</a>
+    <a href="index.html#reservation" onclick="closeMob()" data-ge="დაჯავშნა" data-en="Book a Table" data-ru="Забронировать">დაჯავშნა</a>
+    <a href="index.html#contact" onclick="closeMob()" data-ge="კონტაქტი" data-en="Contact Us" data-ru="Контакты">კონტაქტი</a>
   </nav>
 </div>
 
@@ -32,13 +86,34 @@
       <img src="images/tavla-nav-hero.png" alt="Tavla" class="nav-logo"/>
     </a>
     <ul class="nav-menu">
-      <li><a href="index.html">მთავარი</a></li>
-      <li><a href="about.html">ჩვენს შესახებ</a></li>
-      <li><a href="menu.html">მენიუ</a></li>
-      <li><a href="drinks.html">სასმელები</a></li>
-      <li><a href="index.html#reservation" class="nav-cta">დაჯავშნა</a></li>
+      <li><a href="index.html" data-ge="მთავარი" data-en="Home" data-ru="Главная">მთავარი</a></li>
+      <li><a href="about.html" data-ge="ჩვენს შესახებ" data-en="About Us" data-ru="О нас">ჩვენს შესახებ</a></li>
+      <li><a href="menu.html" data-ge="მენიუ" data-en="Menu" data-ru="Меню">მენიუ</a></li>
+      <li><a href="drinks.html" data-ge="სასმელები" data-en="Drinks" data-ru="Напитки">სასმელები</a></li>
+      <li><a href="index.html#contact" data-ge="კონტაქტი" data-en="Contact Us" data-ru="Контакты">კონტაქტი</a></li>
+      <li class="nav-lang">
+        <div class="lang-dropdown" id="langDropdown">
+          <button class="lang-current" type="button" aria-haspopup="listbox" aria-expanded="false">GE <i class="fa fa-chevron-down"></i></button>
+          <div class="lang-drop-menu" role="listbox">
+            <button type="button" class="lang-opt" data-lang="en">EN</button>
+            <button type="button" class="lang-opt" data-lang="ru">RU</button>
+          </div>
+        </div>
+      </li>
+      <li><a href="index.html#reservation" class="nav-book" data-ge="დაჯავშნა" data-en="Book a Table" data-ru="Забронировать">დაჯავშნა</a></li>
     </ul>
-    <button class="hamburger" id="hamburger" aria-label="Menu" onclick="toggleMob()"><span></span><span></span><span></span></button>
+    <div class="nav-actions">
+      <div class="lang-dropdown" id="mobLangDropdown">
+        <button class="lang-current" type="button" aria-haspopup="listbox" aria-expanded="false">GE <i class="fa fa-chevron-down"></i></button>
+        <div class="lang-drop-menu" role="listbox">
+          <button type="button" class="lang-opt" data-lang="en">EN</button>
+          <button type="button" class="lang-opt" data-lang="ru">RU</button>
+        </div>
+      </div>
+      <div class="hamburger" id="hamburger" onclick="toggleMob()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
   </div>
 </nav>
 
@@ -158,8 +233,58 @@
 <script src="js/lenis.min.js"></script>
 <script src="js/lenis-init.js"></script>
 <script>
-  function toggleMob(){ document.getElementById('mobNav').classList.toggle('open'); }
-  function closeMob(){ document.getElementById('mobNav').classList.remove('open'); }
+  function toggleMob(){
+    var open=document.getElementById('mobNav').classList.toggle('open');
+    document.getElementById('hamburger').classList.toggle('active',open);
+    document.body.classList.toggle('mob-lock',open);
+  }
+  function closeMob(){
+    document.getElementById('mobNav').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('active');
+    document.body.classList.remove('mob-lock');
+  }
+  var langLabels={ge:'GE',en:'EN',ru:'RU'};
+  var pageTitles={
+    ge:'წესები და პირობები | Tavla თავლა',
+    en:'Terms & Conditions | Tavla თავლა',
+    ru:'Условия использования | Tavla თავლა'
+  };
+  function updateLangDropdowns(lang){
+    document.querySelectorAll('.lang-dropdown').forEach(function(dd){
+      var currentBtn=dd.querySelector('.lang-current');
+      var menu=dd.querySelector('.lang-drop-menu');
+      currentBtn.innerHTML=langLabels[lang]+' <i class="fa fa-chevron-down"></i>';
+      menu.innerHTML='';
+      ['ge','en','ru'].filter(function(l){return l!==lang;}).forEach(function(l){
+        var btn=document.createElement('button');
+        btn.type='button';btn.className='lang-opt';btn.setAttribute('data-lang',l);
+        btn.textContent=langLabels[l];
+        btn.addEventListener('click',function(e){e.stopPropagation();setLang(l);dd.classList.remove('open');});
+        menu.appendChild(btn);
+      });
+    });
+  }
+  function setLang(lang){
+    document.querySelectorAll('[data-ge]').forEach(function(el){
+      var t=el.getAttribute('data-'+lang);
+      if(t!==null)el.textContent=t;
+    });
+    document.documentElement.lang=lang==='ge'?'ka':lang;
+    document.title=pageTitles[lang];
+    updateLangDropdowns(lang);
+    localStorage.setItem('tavla-lang',lang);
+  }
+  document.querySelectorAll('.lang-dropdown').forEach(function(dd){
+    dd.querySelector('.lang-current').addEventListener('click',function(e){
+      e.stopPropagation();
+      document.querySelectorAll('.lang-dropdown.open').forEach(function(other){if(other!==dd)other.classList.remove('open');});
+      dd.classList.toggle('open');
+    });
+  });
+  document.addEventListener('click',function(){
+    document.querySelectorAll('.lang-dropdown.open').forEach(function(dd){dd.classList.remove('open');});
+  });
+  setLang(localStorage.getItem('tavla-lang')||'ge');
 </script>
 </body>
 </html>

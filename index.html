@@ -55,15 +55,16 @@
       text-align: left; transition: color .2s, background .2s;
     }
     .lang-opt:hover { color: #fff; background: rgba(255,255,255,.06); }
-    .mob-lang-wrap {
+    .mob-lang-wrap { display: none; }
+    .nav-actions {
       display: none;
-      padding: 14px 28px 20px;
-      border-top: 1px solid rgba(255,255,255,.07);
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
     }
-    .mob-lang-wrap .lang-dropdown { display: inline-block; }
-    .mob-lang-wrap .lang-drop-menu { left: 0; right: auto; }
     @media(max-width:960px){
-      .mob-lang-wrap { display: block; }
+      .nav-actions { display: flex; }
+      .nav-actions .lang-drop-menu { right: 0; left: auto; }
     }
   </style>
 </head>
@@ -79,15 +80,6 @@
     <a href="#reservation" onclick="closeMob()" data-ge="დაჯავშნა" data-en="Book a Table" data-ru="Забронировать">დაჯავშნა</a>
     <a href="#contact" onclick="closeMob()" data-ge="კონტაქტი" data-en="Contact Us" data-ru="Контакты">კონტაქტი</a>
   </nav>
-  <div class="mob-lang-wrap">
-    <div class="lang-dropdown" id="mobLangDropdown">
-      <button class="lang-current" type="button" aria-haspopup="listbox" aria-expanded="false">GE <i class="fa fa-chevron-down"></i></button>
-      <div class="lang-drop-menu" role="listbox">
-        <button type="button" class="lang-opt" data-lang="en">EN</button>
-        <button type="button" class="lang-opt" data-lang="ru">RU</button>
-      </div>
-    </div>
-  </div>
 </div>
 
 <!-- NAVBAR -->
@@ -113,8 +105,17 @@
       </li>
       <li><a href="#reservation" class="nav-book" data-ge="დაჯავშნა" data-en="Book a Table" data-ru="Забронировать">დაჯავშნა</a></li>
     </ul>
-    <div class="hamburger" id="hamburger" onclick="toggleMob()">
-      <span></span><span></span><span></span>
+    <div class="nav-actions">
+      <div class="lang-dropdown" id="mobLangDropdown">
+        <button class="lang-current" type="button" aria-haspopup="listbox" aria-expanded="false">GE <i class="fa fa-chevron-down"></i></button>
+        <div class="lang-drop-menu" role="listbox">
+          <button type="button" class="lang-opt" data-lang="en">EN</button>
+          <button type="button" class="lang-opt" data-lang="ru">RU</button>
+        </div>
+      </div>
+      <div class="hamburger" id="hamburger" onclick="toggleMob()">
+        <span></span><span></span><span></span>
+      </div>
     </div>
   </div>
 </nav>
@@ -124,9 +125,9 @@
   <div class="hero-split">
     <div class="hero-left">
       <div style="max-width:440px">
-        <div class="hero-badge"><i class="fa fa-star"></i> <span data-ge="2009 წლიდან" data-en="Established in 2009" data-ru="С 2009 года">2009 წლიდან</span></div>
-        <h1 class="hero-h1" data-ge="თავლა გიწვევთ ნამდვილი ქართული სამზარეულოს გამოსაცდელად თბილისში" data-en="Tavla თავლა invites you to experience the true essence of Georgian cuisine in Tbilisi" data-ru="Тавла приглашает вас познакомиться с истинной сущностью грузинской кухни в Тбилиси">თავლა გიწვევთ ქართული სამზარეულოს ნამდვილ საფუძველს განიცადოთ თბილისში</h1>
-        <p class="hero-p" data-i18n-html data-ge="18 წელი+ ჩვენი რესტორანი თბილისში ქართული სამზარეულოს აუთენტური გემოების წამყვანია, სადაც ტრადიცია, გემო და თბილი ოჯახურობა ერთად არის თავმოყრილი. გთავაზობთ ახლად გამომცხვარ <a href=&quot;menu.html&quot;>ხაჭაპურს</a>, ხელით დაკეცილ <a href=&quot;menu.html&quot;>ხინკალს</a> და ოსტატურად შემწებულ <a href=&quot;menu.html&quot;>ქართულ ბარბეკიუს</a>." data-en="Since 2009, our restaurant in Tbilisi has been a leading destination for authentic Georgian cuisine, where tradition, flavour, and warm hospitality come together. We proudly serve freshly baked <a href=&quot;menu.html&quot;>Khachapuri</a>, hand-folded <a href=&quot;menu.html&quot;>Khinkali</a>, and expertly grilled <a href=&quot;menu.html&quot;>Georgian BBQ</a>." data-ru="С 2009 года наш ресторан в Тбилиси является одним из лучших мест аутентичной грузинской кухни, где сочетаются традиции, вкус и тёплое гостеприимство. Мы гордимся свежевыпеченным <a href=&quot;menu.html&quot;>хачапури</a>, ручной <a href=&quot;menu.html&quot;>хинкали</a> и мастерски приготовленным <a href=&quot;menu.html&quot;>грузинским барбекю</a>.">2009 წლიდან ჩვენი რესტორანი თბილისში ქართული სამზარეულოს აუთენტური გემოვნების წამყვანი დანიშნულებაა, სადაც ტრადიცია, გემო და თბილი ოჯახურობა ერთადაა. ვემსახურებით ახლად გამომცხვარ <a href="menu.html">ხაჭაპურს</a>, ხელით დაკეცილ <a href="menu.html">ხინკალს</a> და ოსტატურად შემწებულ <a href="menu.html">ქართულ ბარბეკიუს</a>.</p>
+        <div class="hero-badge"><i class="fa fa-star"></i> <span data-ge="დაარსებულია 2009 წელს" data-en="Established in 2009" data-ru="С 2009 года">დაარსებულია 2009 წელს</span></div>
+        <h1 class="hero-h1" data-ge="თავლა, ნამდვილი ქართული სამზარეულოს გამოცდილება თბილისში" data-en="Tavla invites you to experience the true essence of Georgian cuisine in Tbilisi" data-ru="Тавла познакомьтесь с истинной грузинской кухни в Тбилиси">თავლა, ნამდვილი ქართული სამზარეულოს გამოცდილება თბილისში</h1>
+        <p class="hero-p" data-i18n-html data-ge="ჩვენი რესტორანი თბილისში ქართული სამზარეულოს წამყვანია, სადაც ტრადიცია, გემო და თბილი ოჯახურობა ერთად არის თავმოყრილი. გთავაზობთ ახლად გამომცხვარ <a href=&quot;menu.html&quot;>ხაჭაპურს</a>, ხელით დაკეცილ <a href=&quot;menu.html&quot;>ხინკალს</a> და ოსტატურ <a href=&quot;menu.html&quot;>მრავალ კერძებს</a>." data-en="Our restaurant has been a leading destination for authentic Georgian cuisine, where tradition, flavour, and warm hospitality come together. We proudly serve freshly baked <a href=&quot;menu.html&quot;>Khachapuri</a>, hand-folded <a href=&quot;menu.html&quot;>Khinkali</a>, and expertly made <a href=&quot;menu.html&quot;>numerous dishes</a>." data-ru="С 2009 года наш ресторан в Тбилиси является одним из лучших мест грузинской кухни, где сочетаются традиции, вкус и тёплое гостеприимство. Мы гордимся свеже-выпеченным <a href=&quot;menu.html&quot;>хачапури</a>, ручной <a href=&quot;menu.html&quot;>хинкали</a> и мастерски приготовленные <a href=&quot;menu.html&quot;>блюда</a>.">2009 წლიდან ჩვენი რესტორანი თბილისში ქართული სამზარეულოს აუთენტური გემოვნების წამყვანი დანიშნულებაა, სადაც ტრადიცია, გემო და თბილი ოჯახურობა ერთადაა. ვემსახურებით ახლად გამომცხვარ <a href="menu.html">ხაჭაპურს</a>, ხელით დაკეცილ <a href="menu.html">ხინკალს</a> და ოსტატურად შემწებულ <a href="menu.html">ქართულ ბარბეკიუს</a>.</p>
         <div class="hero-btns">
           <a href="menu.html" class="btn btn-primary" data-ge="მენიუს ნახვა" data-en="View Menu" data-ru="Смотреть меню">მენიუს ნახვა</a>
           <a href="#reservation" class="btn btn-outline-w" data-ge="მაგიდის დაჯავშნა" data-en="Reserve a Table" data-ru="Забронировать стол">მაგიდის დაჯავშნა</a>
@@ -146,13 +147,13 @@
         <div class="hdish">
           <div class="hdish-img"><img src="./images/index-khinkali.png" alt="Khinkali"/></div>
           <div class="hdish-name" data-ge="ხინკალი" data-en="Khinkali" data-ru="Хинкали">ხინკალი</div>
-          <div class="hdish-sub" data-ge="ტრადიციული პელმენი" data-en="Traditional dumplings" data-ru="Традиционные пельмени">ტრადიციული პელმენი</div>
+          <div class="hdish-sub" data-ge="ტრადიციული ხინკალი" data-en="Traditional Dumplings" data-ru="Традиционные Хинкали">ტრადიციული პელმენი</div>
           <div class="hdish-stars">★★★★★</div>
         </div>
         <div class="hdish">
           <div class="hdish-img"><img src="./images/xbo-neknebi-ajikit.PNG" alt="Georgian Salad"/></div>
-          <div class="hdish-name" data-ge="ძვრილი აჯიკით" data-en="Ribs with Ajika" data-ru="Рёбра с аджикой">ძვრილი აჯიკით</div>
-          <div class="hdish-sub" data-ge="კაკლის სოუსით" data-en="Walnut dressing" data-ru="Ореховый соус">კაკლის სოუსით</div>
+          <div class="hdish-name" data-ge="ხბოს ნეკნი აჯიკით" data-en="Ribs with Ajika" data-ru="Рёбра с аджикой">ხბოს ნეკნი აჯიკით</div>
+          <div class="hdish-sub" data-ge="აჯიკის სოუსით" data-en="Ajika dressing" data-ru="аджиковый соус">კაკლის სოუსით</div>
           <div class="hdish-stars">★★★★★</div>
         </div>
       </div>
@@ -184,9 +185,9 @@
       </div>
       <div class="fi">
         <p class="sec-label" data-ge="ჩვენს შესახებ" data-en="About Us" data-ru="О нас">ჩვენს შესახებ</p>
-        <h2 class="sec-h2" data-ge="ერთ-ერთი საუკეთესო ქართული რესტორანი თბილისში" data-en="Tavla – One of Tbilisi's Finest Georgian Restaurants" data-ru="Тавла, один из лучших грузинских ресторанов Тбилиси">თავლა – ერთ-ერთი საუკეთესო ქართული რესტორანი თბილისში</h2>
-        <p class="sec-p" data-ge="თავლა არის ტრადიციული ქართული რესტორანი თბილისში, რომელიც გთავაზობთ აუთენტურ გემოებს, თბილ ოჯახურობასა და ნამდვილ ქართულ გამოცდილებას. ჩვენ ვართ წამყვანი დანიშნულება მათთვის, ვინც ეძებს აუთენტურ ქართულ სამზარეულოს: ხინკალს, ხაჭაპურსა და პრემიუმ ქართულ ღვინოს. თავლაში ყოველი კერძი ტრადიციითა და ხარისხით მზადდება, ქმნის დაუვიწყარ ქართულ გამოცდილებას თბილისის გულში." data-en="Tavla (თავლა) is a traditional Georgian restaurant in Tbilisi, offering authentic flavours, warm hospitality, and a true taste of Georgia. We are a leading destination for those seeking authentic Georgian cuisine, including Khinkali, Khachapuri, and premium Georgian wine. At Tavla, every dish is crafted with tradition and quality, creating a memorable Georgian dining experience in the heart of Tbilisi." data-ru="Тавла, традиционный грузинский ресторан в Тбилиси, предлагающий аутентичные вкусы, тёплое гостеприимство и настоящий вкус Грузии. Мы являемся одним из лучших мест для тех, кто ищет аутентичную грузинскую кухню: хинкали, хачапури и премиальное грузинское вино. В Тавле каждое блюдо готовится с традицией и качеством, создавая незабываемый грузинский ужин в сердце Тбилиси.">თავლა (თავლა) არის ტრადიციული ქართული რესტორანი თბილისში, რომელიც გთავაზობთ აუთენტურ გემოებს, თბილ ოჯახურობასა და ნამდვილ ქართულ გამოცდილებას. ჩვენ ვართ წამყვანი დანიშნულება მათთვის, ვინც ეძებს აუთენტურ ქართულ სამზარეულოს: ხინკალს, ხაჭაპურსა და პრემიუმ ქართულ ღვინოს. თავლაში ყოველი კერძი ტრადიციითა და ხარისხით მზადდება, ქმნის დაუვიწყარ ქართულ გამოცდილებას თბილისის გულში.</p>
-        <p class="sec-p" style="margin-top:15px" data-ge="თავლაში ჩვენი გამოცდილი ქართველი მზარეულები თაობების მიერ გადაცემულ ტრადიციულ რეცეპტებს იყენებენ, რათა შექმნან აუთენტური კერძები, რომლებიც ქართული სამზარეულოს ნამდვილ საფუძველს ასახავენ. ახლად გამომცხვარი ქართული პურიდან მდიდარ და გემრიელ ხაჭაპურამდე, ქართული ბარბეკიუდან, ახალ ბოსტნეულსა და მწვანილებამდე. ყოველი კერძი დაუვიწყარ ქართულ კვებას ქმნის." data-en="At Tavla, our expert Georgian chefs use traditional recipes passed down over generations to create authentic meals that reflect the true essence of Georgian cuisine. From freshly baked Georgian bread to rich and flavorful Khachapuri, Georgian BBQ, fresh vegetables, herbs, and signature sauces, every dish is prepared to deliver an unforgettable Georgian meal." data-ru="В Тавле наши опытные грузинские повара используют традиционные рецепты, передаваемые из поколения в поколение, чтобы создавать аутентичные блюда, отражающие истинную сущность грузинской кухни. От свежевыпеченного грузинского хлеба до насыщенного хачапури, грузинского барбекю, свежих овощей, зелени и фирменных соусов. Каждое блюдо готовится для незабываемого грузинского ужина.">თავლაში ჩვენი გამოცდილი ქართველი მზარეულები თაობების მიერ გადაცემულ ტრადიციულ რეცეპტებს იყენებენ, რათა შექმნან აუთენტური კერძები, რომლებიც ქართული სამზარეულოს ნამდვილ საფუძველს ასახავენ. ახლად გამომცხვარი ქართული პურიდან მდიდარ და გემრიელ ხაჭაპურამდე, ქართული ბარბეკიუდან, ახალ ბოსტნეულსა და მწვანილებამდე. ყოველი კერძი დაუვიწყარ ქართულ კვებას ქმნის.</p>
+        <h2 class="sec-h2" data-ge="ერთ-ერთი საუკეთესო ქართული რესტორანი თბილისში" data-en="One of Tbilisi's Finest Georgian Restaurants" data-ru="Один из лучших грузинских ресторанов Тбилиси">თავლა – ერთ-ერთი საუკეთესო ქართული რესტორანი თბილისში</h2>
+        <p class="sec-p" data-ge="თავლა არის ტრადიციული ქართული რესტორანი სავსე თბილი ოჯახურობითა და ნამდვილი ქართული გემოებით. წამყვანი დანიშნულება მათთვის, ვინც ეძებს ორიგინალურ ქართულ სამზარეულოს. თავლაში ყოველი კერძი ტრადიციითა და ხარისხით მზადდება, ქმნის დაუვიწყარ ქართულ გამოცდილებას." data-en="Traditional Georgian restaurant, full authentic flavours, warm hospitality, and a true taste of Georgia. We are a leading destination for people seeking authentic Georgian cuisine, including Khinkali, Khachapuri, and Georgian wine. At Tavla, every dish is crafted with tradition and quality, creating a memorable Georgian dining experience." data-ru="Традиционный грузинский ресторан в Тбилиси, тёплое гостеприимство и настоящий вкус Грузии, являемся одним из лучших мест для тех, кто ищет аутентичную грузинскую кухню: хинкали, хачапури и грузинское вино. В Тавле каждое блюдо готовится с традицией и качеством, создавая незабываемый грузинский ужин.">თავლა (თავლა) არის ტრადიციული ქართული რესტორანი თბილისში, რომელიც გთავაზობთ აუთენტურ გემოებს, თბილ ოჯახურობასა და ნამდვილ ქართულ გამოცდილებას. ჩვენ ვართ წამყვანი დანიშნულება მათთვის, ვინც ეძებს აუთენტურ ქართულ სამზარეულოს: ხინკალს, ხაჭაპურსა და პრემიუმ ქართულ ღვინოს. თავლაში ყოველი კერძი ტრადიციითა და ხარისხით მზადდება, ქმნის დაუვიწყარ ქართულ გამოცდილებას თბილისის გულში.</p>
+        <p class="sec-p" style="margin-top:15px" data-ge="ჩვენი გამოცდილი მზარეულები ტრადიციულ რეცეპტებს იყენებენ, რომლებიც მზადდება ნატურალური პროდუქტისგან. ახლად გამომცხვარი ქართული პურიდან მდიდარ და გემრიელ ხაჭაპურამდე, ქართულ მწვადსა და ახალ ბოსტნეულამდე." data-en="Our expert Georgian chefs use traditional recipes passed down over generations to create authentic meals that reflect the true essence of Georgian cuisine. From freshly baked Georgian bread to rich and flavorful Khachapuri, Georgian BBQ, fresh and signature sauces, every dish is prepared to deliver an unforgettable experience." data-ru="Наши опытные грузинские повара используют традиционные рецепты, передаваемые из поколения в поколение, чтобы создавать аутентичные блюда, отражающие истинную сущность грузинской кухни. От свежевыпеченного грузинского хлеба до насыщенного хачапури, шашлык и фирменных соусов. Каждое блюдо готовится для незабываемого ужина.">თავლაში ჩვენი გამოცდილი ქართველი მზარეულები თაობების მიერ გადაცემულ ტრადიციულ რეცეპტებს იყენებენ, რათა შექმნან აუთენტური კერძები, რომლებიც ქართული სამზარეულოს ნამდვილ საფუძველს ასახავენ. ახლად გამომცხვარი ქართული პურიდან მდიდარ და გემრიელ ხაჭაპურამდე, ქართული ბარბეკიუდან, ახალ ბოსტნეულსა და მწვანილებამდე. ყოველი კერძი დაუვიწყარ ქართულ კვებას ქმნის.</p>
         <a href="menu.html" class="btn btn-dark" style="margin-top:28px;display:inline-block" data-ge="გაიგეთ მეტი" data-en="Read More" data-ru="Подробнее">გაიგეთ მეტი</a>
       </div>
     </div>
@@ -200,7 +201,7 @@
       <div class="fi">
         <p class="sec-label" data-ge="ჩვენი მენიუ" data-en="Our Menu" data-ru="Наше меню">ჩვენი მენიუ</p>
         <h2 class="sec-h2" data-ge="საკუთარი ნატურალური ყველი და ახლად გამომცხვარი ხაჭაპური" data-en="House-Made Georgian Cheese &amp; Freshly Baked Khachapuri" data-ru="Домашний грузинский сыр и свежий хачапури">საკუთარი ქართული ყველი და ახლად გამომცხვარი ხაჭაპური</h2>
-        <p class="sec-p" data-ge="ქართული სამზარეულოს განსაზღვრული ელემენტია ყველი, რომლის ისტორია 2000 წელზე მეტს მოიცავს. თავლაში ამ ტრადიციას ვაგრძელებთ, ყველს თვითონ ვამზადებთ საკუთარი ფერმისგან, რაც უზრუნველყოფს სიამოვნებას, სიმდიდრესა და აუთენტურობას ყოველ ნაკრძალში. ეს საშუალებას გვაძლევს აღვადგინოთ ნამდვილი გემოები, რაც ყოველ კერძში იგრძნობა. თავლა ფართოდ მიიჩნევა ერთ-ერთ საუკეთესო და მოყვარულ რესტორნად თბილისში." data-en="One of the defining elements of Georgian cuisine is cheese, with a history spanning more than 2,000 years. At Tavla, we continue this tradition by preparing house-made Georgian cheese in-house, ensuring freshness, richness, and authenticity in every bite. This dedication allows us to recreate the true flavours of Georgia, something you can taste in every dish, especially in our freshly baked Khachapuri. Tavla is widely regarded as the best Khachapuri restaurant in Tbilisi." data-ru="Одним из определяющих элементов грузинской кухни является сыр с историей более 2000 лет. В Тавле мы продолжаем эту традицию, готовя домашний грузинский сыр, обеспечивая свежесть, насыщенность и аутентичность в каждом кусочке. Это позволяет нам воссоздать настоящие вкусы Грузии, то, что вы чувствуете в каждом блюде, особенно в свежем хачапури. Тавла широко считается лучшим рестораном хачапури в Тбилиси.">ქართული სამზარეულოს განსაზღვრული ელემენტია ყველი, რომლის ისტორია 2000 წელზე მეტს მოიცავს. თავლაში ამ ტრადიციას ვაგრძელებთ, ყველს საკუთრად ვამზადებთ, რაც უზრუნველყოფს სიამოვნებას, სიმდიდრესა და აუთენტურობას ყოველ ნაკრძალში. ეს საშუალებას გვაძლევს აღვადგინოთ ნამდვილი გემოები, რაც გრძნობთ ყოველ კერძში, განსაკუთრებით ახლად გამომცხვარ ხაჭაპურში. თავლა ფართოდ მიიჩნევა საუკეთესო ხაჭაპურის რესტორანად თბილისში.</p>
+        <p class="sec-p" data-ge="ქართული სამზარეულოს განსაზღვრული ელემენტია ყველი, რომელსაც 100% ნატურალურად თავად ვამზადებთ. ამ ტრადიციას ვაგრძელებთ, ვამზადებთ საკუთარი ფერმისგან რაც უზრუნველყოფს სიამოვნებას, სიმდიდრესა და ჯანმრთელობას. " data-en="Cheese is one of the most defining elements in Georgian Cuisine, with a history spanning more than 2,000 years. At Tavla, we continue this tradition by preparing house-made Georgian cheese in-house." data-ru="Одним из определяющих элементов грузинской кухни является сыр с историей более 2000 лет. В Тавле мы продолжаем эту традицию, готовя домашний грузинский сыр, обеспечивая свежесть и насыщенность.">ქართული სამზარეულოს განსაზღვრული ელემენტია ყველი, რომლის ისტორია 2000 წელზე მეტს მოიცავს. თავლაში ამ ტრადიციას ვაგრძელებთ, ყველს საკუთრად ვამზადებთ, რაც უზრუნველყოფს სიამოვნებას, სიმდიდრესა და აუთენტურობას ყოველ ნაკრძალში. ეს საშუალებას გვაძლევს აღვადგინოთ ნამდვილი გემოები, რაც გრძნობთ ყოველ კერძში, განსაკუთრებით ახლად გამომცხვარ ხაჭაპურში. თავლა ფართოდ მიიჩნევა საუკეთესო ხაჭაპურის რესტორანად თბილისში.</p>
         <p class="sec-p" style="margin-top:14px" data-ge="გაეცანით სრულ ქართულ მენიუს, კლასიკური საწყისებიდან მზარეულის არჩევანსა და სეზონურ სპეციალობებამდე." data-en="Explore our full Georgian menu, from classic starters to chef's picks and seasonal specialities." data-ru="Изучите наше полное грузинское меню: от классических закусок до выбора шеф-повара и сезонных блюд.">გაეცანით სრულ ქართულ მენიუს, კლასიკური საწყისებიდან მზარეულის არჩევანსა და სეზონურ სპეციალობებამდე.</p>
         <a href="menu.html" class="btn btn-gold" style="margin-top:28px;display:inline-block" data-ge="სრული მენიუ" data-en="View Full Menu" data-ru="Полное меню">სრული მენიუ</a>
       </div>
@@ -217,7 +218,7 @@
     <div class="split-text fi">
       <p class="sec-label" data-ge="ადგილი" data-en="Georgian Cuisine" data-ru="Грузинская кухня">ადგილი</p>
       <h2 class="sec-h2" data-ge="ქართული გარემო" data-en="Georgian Cuisine" data-ru="Грузинская кухня">ქართული გარემო</h2>
-      <p class="sec-p" data-ge="ნაღდი საქართველოს გემოებში და განიცადეთ აუთენტური ქართული სამზარეულო თბილისში ახალი გზით. ხინკალ-ხაჭაპურიდან სულგუნამდე და ტრადიციულ სპეციალობებამდე. ყოველი კერძი ასახავს ქართული კულტურის სიღრმეს და ხასიათს." data-en="Immerse yourself in the flavours of Georgia and experience authentic Georgian cuisine in Tbilisi like never before. From Khinkali and Khachapuri to Sulguni cheese and traditional specialities, every dish showcases the depth, warmth, and character of Georgian food culture." data-ru="Погрузитесь во вкусы Грузии и откройте для себя аутентичную грузинскую кухню в Тбилиси. От хинкали и хачапури до сыра сулугуни и традиционных блюд. Каждое блюдо отражает глубину, теплоту и характер грузинской кулинарной культуры.">ჩაეფლეთ საქართველოს გემოებში და განიცადეთ აუთენტური ქართული სამზარეულო თბილისში ახალი გზით. ხინკალიდან და ხაჭაპურიდან სულგუნამდე და ტრადიციულ სპეციალობებამდე. ყოველი კერძი ასახავს ქართული საკვების კულტურის სიღრმეს, თბილობასა და ხასიათს.</p>
+      <p class="sec-p" data-ge="თავლა ძალიან ზრუნავს ქართული გარემოს შესანარჩუნებლად მრავალი ხერხებით. გარემო ასახავს ქართული კულტურის სიღრმეს და ხასიათს." data-en="Environment is not any less important than the top quality dishes. We make sure to communicate deep and rich culture of Georgia through many ways." data-ru="Визуаль не менее важно, чем высочайшее качество блюд. Мы стремимся передать глубокую и богатую культуру Грузии различными способами.">ჩაეფლეთ საქართველოს გემოებში და განიცადეთ აუთენტური ქართული სამზარეულო თბილისში ახალი გზით. ხინკალიდან და ხაჭაპურიდან სულგუნამდე და ტრადიციულ სპეციალობებამდე. ყოველი კერძი ასახავს ქართული საკვების კულტურის სიღრმეს, თბილობასა და ხასიათს.</p>
       <a href="#reservation" class="btn btn-outline-d" style="margin-top:28px;display:inline-block" data-ge="ქართული სპეციალობები" data-en="Georgian Specialities" data-ru="Грузинские блюда">ქართული სპეციალობები</a>
     </div>
     <div class="split-img fi">
@@ -235,8 +236,8 @@
     <div class="split-text dark fi">
       <p class="sec-label" data-ge="ქართული სპეციალობები" data-en="Georgian Specialities" data-ru="Грузинские блюда">ქართული სპეციალობები</p>
       <h2 class="sec-h2" data-ge="უმაღლესი ხარისხი" data-en="Highest Quality" data-ru="Высшее качество">უმაღლესი ხარისხი</h2>
-      <p class="sec-p" data-ge="ვიყენებთ ყურადღებით შერჩეულ პრემიუმ ინგრედიენტებს, ხელით მომზადებასა და ძველქართულ სამზარეულო ტექნიკებს, რათა ყოველი კერძი ჩვენს უმაღლეს სტანდარტებს აკმაყოფილებდეს. საკუთარი ყველიდან და ახლად გამომცხვარ ქართულ პურამდე, დაკეცილ ხინკალამდე და სრულყოფილ ხაჭაპურამდე. ყოველი თეფში სიზუსტით და ზრუნვით იქმნება." data-en="We use carefully sourced premium ingredients, handcrafted preparations, and time-honoured cooking techniques to ensure every dish meets our highest standards. From house-made cheese and freshly baked Georgian bread to delicately folded Khinkali and perfectly prepared Khachapuri, each plate is created with precision and care." data-ru="Мы используем тщательно отобранные премиальные ингредиенты, ручную подготовку и проверенные временем кулинарные техники, чтобы каждое блюдо соответствовало нашим высочайшим стандартам. От домашнего сыра и свежего грузинского хлеба до аккуратно сложенного хинкали и идеального хачапури. Каждая тарелка создаётся с точностью и заботой.">ვიყენებთ ყურადღებით შერჩეულ პრემიუმ ინგრედიენტებს, ხელით მომზადებასა და ძველქართულ სამზარეულო ტექნიკებს, რათა ყოველი კერძი ჩვენს უმაღლეს სტანდარტებს აკმაყოფილებდეს. საკუთარი ყველიდან და ახლად გამომცხვარ ქართულ პურამდე, ფრთნად დაკეცილ ხინკალამდე და სრულყოფილ ხაჭაპურამდე. ყოველი თეფში ზუსტობითა და ზრუნვით იქმნება.</p>
-      <p class="sec-p" style="margin-top:14px" data-ge="ჩვენი გამოცდილი მზარეულები, თითოეული კულინარულ მემკვიდრეობაში ღრმად ფუძეული. ყურადღებით ამზადებენ ყოველ კერძს ბუნებრივი გემოების გამოსაკვეთად, აუთენტურობის შესანარჩუნებლად და ტრადიციული ქართული სამზარეულოს ნამდვილი გემოს მისაღწევად." data-en="Our expert Georgian chefs, each deeply rooted in the culinary heritage of Georgia, thoughtfully prepare every dish to highlight natural flavours, preserve authenticity, and deliver the true taste of traditional Georgian cuisine." data-ru="Наши опытные грузинские повара, каждый глубоко укоренён в кулинарном наследии Грузии, внимательно готовят каждое блюдо, чтобы подчеркнуть натуральные вкусы, сохранить аутентичность и передать настоящий вкус традиционной грузинской кухни.">ჩვენი გამოცდილი მზარეულები, თითოეული კულინარულ მემკვიდრეობაში ღრმად ფუძეული. ყურადღებით ამზადებენ ყოველ კერძს ბუნებრივი გემოების გამოსაკვეთად, აუთენტურობის შესანარჩუნებლად და ტრადიციული ქართული სამზარეულოს ნამდვილი გემოს მისაღწევად.</p>
+      <p class="sec-p" data-ge="ვიყენებთ ყურადღებით შერჩეულ მაღალი ხარისხის ინგრედიენტებს და ქართული სამზარეულოს ტექნიკებს, რომ ყოველი კერძი მაღალ სტანდარტს აკმაყოფილებდეს. საკუთარი ყველიდან და ახლად გამომცხვარ ქართულ პურამდე, დაკეცილ ხინკალამდე და სრულყოფილ ხაჭაპურამდე." data-en="We use carefully sourced premium ingredients and time-honoured cooking techniques to ensure every dish meets our highest standards. From house-made cheese and freshly baked Georgian bread to delicately folded Khinkali." data-ru="Мы используем тщательно отобранные ингредиенты и проверенные временем кулинарные техники, чтобы каждое блюдо соответствовало нашим стандартам. От домашнего сыра и свежего грузинского хлеба до аккуратно сложенного хинкали.">ვიყენებთ ყურადღებით შერჩეულ პრემიუმ ინგრედიენტებს, ხელით მომზადებასა და ძველქართულ სამზარეულო ტექნიკებს, რათა ყოველი კერძი ჩვენს უმაღლეს სტანდარტებს აკმაყოფილებდეს. საკუთარი ყველიდან და ახლად გამომცხვარ ქართულ პურამდე, ფრთნად დაკეცილ ხინკალამდე და სრულყოფილ ხაჭაპურამდე. ყოველი თეფში ზუსტობითა და ზრუნვით იქმნება.</p>
+      <p class="sec-p" style="margin-top:14px" data-ge="ჩვენი გამოცდილი მზარეულები, თითოეული კულინარულ მემკვიდრეობაში ღრმად ფუძეულნი არიან. ყურადღებით ამზადებენ ყოველ კერძს სასურველი გემოს მისაღწევად." data-en="Our expert Georgian chefs, each deeply rooted in the culinary heritage of Georgia, thoughtfully prepare every dish to highlight natural flavours, preserve authenticity, and deliver the true taste of traditional Georgian cuisine." data-ru="Наши опытные грузинские повара, каждый глубоко укоренён в кулинарном наследии Грузии, внимательно готовят каждое блюдо, чтобы подчеркнуть натуральные вкусы, сохранить аутентичность и передать настоящий вкус традиционной грузинской кухни.">ჩვენი გამოცდილი მზარეულები, თითოეული კულინარულ მემკვიდრეობაში ღრმად ფუძეული. ყურადღებით ამზადებენ ყოველ კერძს ბუნებრივი გემოების გამოსაკვეთად, აუთენტურობის შესანარჩუნებლად და ტრადიციული ქართული სამზარეულოს ნამდვილი გემოს მისაღწევად.</p>
       <a href="menu.html" class="btn btn-gold" style="margin-top:28px;display:inline-block" data-ge="ჩვენი მენიუ" data-en="Our Menu" data-ru="Наше меню">ჩვენი მენიუ</a>
     </div>
   </div>
