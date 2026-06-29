@@ -11,7 +11,7 @@ img{display:block;max-width:100%}
   --grey:#666;
 }
 /* NAVBAR */
-.navbar{position:fixed;top:0;left:0;width:100%;z-index:999;background:transparent;display:flex;align-items:center;justify-content:center;height:96px;transition:background .28s ease,backdrop-filter .28s ease,-webkit-backdrop-filter .28s ease,box-shadow .28s ease}
+.navbar{position:fixed;top:0;left:0;width:100%;z-index:999;background:rgba(25,18,13,.72);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 10px 30px rgba(0,0,0,.22);display:flex;align-items:center;justify-content:center;height:96px;transition:background .28s ease,backdrop-filter .28s ease,-webkit-backdrop-filter .28s ease,box-shadow .28s ease}
 .navbar-inner{width:100%;max-width:1200px;display:flex;align-items:center;justify-content:space-between;padding:0 40px}
 .navbar.scrolled{background:rgba(25,18,13,.72);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 10px 30px rgba(0,0,0,.22)}
 .nav-brand{display:flex;align-items:center;color:#fff;line-height:1}
@@ -61,7 +61,7 @@ body.mob-lock{overflow:hidden}
 .btn-outline-d:hover{background:var(--navy);color:#fff}
 /* hero dish bar — overlay on image bottom */
 .hero-dishes{position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:center;background:linear-gradient(to top,rgba(14,12,10,.88) 0%,rgba(14,12,10,.5) 100%);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px)}
-.hdish{display:grid;grid-template-columns:56px 1fr;grid-template-rows:auto auto auto;align-items:center;column-gap:14px;padding:18px 36px}
+.hdish{display:grid;grid-template-columns:56px 1fr;grid-template-rows:auto auto auto;align-items:center;column-gap:14px;padding:18px 18px}
 .hdish:not(:last-child){border-right:1px solid rgba(255,255,255,.12)}
 .hdish-img{grid-column:1;grid-row:1/4;width:56px;height:56px;border-radius:50%;overflow:hidden}
 .hdish-img img{width:100%;height:100%;object-fit:cover}

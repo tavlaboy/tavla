@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drinks | Tavla თავლა – Georgian Restaurant in Tbilisi</title>
+  <meta name="description" content="Explore Tavla's drinks menu — Georgian wines, chacha, cognac, whiskey, beer, soft drinks and more. Authentic Georgian restaurant in Tbilisi." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <style>
+    body { background: #0e0c0a; }
+
+    /* ── HERO ── */
+    .menu-hero {
+      position: relative;
+      height: 60vh;
+      min-height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      background: #0e0c0a;
+    }
+    .menu-hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('images/menu-hero-backgruond.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transform: scale(1.04);
+    }
+    .menu-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(14,12,10,.45) 0%, rgba(14,12,10,1) 100%);
+    }
+    .menu-hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 24px;
+    }
+    .menu-hero-content h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 500;
+      color: var(--gold);
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+    .menu-hero-content p {
+      font-size: clamp(.82rem, 1.4vw, 1rem);
+      color: rgba(255,255,255,.72);
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.75;
+    }
+
+    /* ── INFO BAR ── */
+    .menu-info-bar {
+      background: #0e0c0a;
+      border-top: none;
+      border-bottom: none;
+      padding: 18px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .mib-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: .78rem;
+      color: rgba(255,255,255,.68);
+      line-height: 1.55;
+      max-width: 520px;
+    }
+    .mib-item i { color: var(--gold); font-size: .9rem; flex-shrink: 0; }
+    .mib-divider { width: 1px; height: 32px; background: rgba(255,255,255,.14); flex-shrink: 0; }
+
+    /* ── FILTER TABS ── */
+    .menu-filters {
+      background: #0e0c0a;
+      padding: 36px 24px 36px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .filter-btn {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,.25);
+      color: rgba(255,255,255,.7);
+      padding: 9px 22px;
+      font-family: 'Poppins', sans-serif;
+      font-size: .7rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 50px;
+      transition: background .2s, border-color .2s, color .2s;
+    }
+    .filter-btn:hover { border-color: var(--gold); color: var(--gold); }
+    .filter-btn.active { background: var(--gold); border-color: var(--gold); color: var(--navy); font-weight: 600; }
+
+    /* ── MENU SECTIONS ── */
+    .menu-page-sec { background: #0e0c0a; padding: 0 0 96px; }
+    .menu-page-wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 56px;
+    }
+    .menu-section-hdr {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-bottom: 22px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      overflow: hidden;
+    }
+    .menu-sec-img {
+      width: 60%;
+      display: block;
+      margin: 0 auto;
+      border-radius: 0;
+      border: none;
+    }
+    .menu-section-hdr h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 500;
+      color: #fff;
+      line-height: 1.15;
+      padding: 22px 0 20px;
+    }
+    .menu-items-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+    .menu-item {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 15px 20px;
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.05);
+      transition: background .2s, border-color .2s;
+    }
+    .menu-item:hover { background: rgba(255,255,255,.065); border-color: rgba(216,180,106,.2); }
+    .menu-item-info { display: flex; flex-direction: column; gap: 4px; }
+    .menu-item-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.08rem;
+      color: var(--gold);
+      line-height: 1.3;
+    }
+    .menu-item-desc { font-size: .82rem; color: rgba(255,255,255,.4); line-height: 1.65; }
+    .menu-item-price {
+      font-size: 1rem;
+      font-weight: 600;
+      color: rgba(255,255,255,.88);
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) { .menu-items-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 768px) {
+      .menu-page-wrap { padding: 0 20px; gap: 40px; }
+      .menu-hero { height: 52vh; min-height: 340px; }
+      .menu-info-bar { padding: 16px 20px; gap: 14px; flex-direction: column; align-items: flex-start; }
+      .mib-divider { display: none; }
+      .menu-sec-img { width: 100%; }
+    }
+    @media (max-width: 480px) {
+      .menu-filters { padding: 28px 16px 28px; gap: 8px; }
+      .filter-btn { font-size: .62rem; padding: 8px 14px; }
+      .menu-item { padding: 14px 14px; }
+      .menu-item-name { font-size: 1rem; }
+      .menu-item-desc { font-size: .78rem; }
+      .menu-item-price { font-size: .95rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- MOBILE NAV DROPDOWN -->
+<div class="mob-nav" id="mobNav">
+  <nav class="mob-nav-links">
+    <a href="index.html" onclick="closeMob()">Home</a>
+    <a href="index.html#about" onclick="closeMob()">About Us</a>
+    <a href="menu.html" onclick="closeMob()">Menu</a>
+    <a href="drinks.html" onclick="closeMob()">Drinks</a>
+    <a href="index.html#reservation" onclick="closeMob()">Book a Table</a>
+    <a href="index.html#contact" onclick="closeMob()">Contact Us</a>
+  </nav>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="navbar-inner">
+    <a href="index.html" class="nav-brand" aria-label="Tavla home">
+      <img src="images/tavla-nav-hero.png" alt="Tavla" class="nav-logo"/>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#about">About Us</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="drinks.html" style="color:#fff">Drinks</a></li>
+      <li><a href="index.html#contact">Contact Us</a></li>
+      <li><a href="index.html#reservation" class="nav-book">Book a Table</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" onclick="toggleMob()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="menu-hero">
+  <div class="menu-hero-bg"></div>
+  <div class="menu-hero-overlay"></div>
+  <div class="menu-hero-content fi">
+    <h1>Drinks</h1>
+    <p>Georgian wines, chacha, fine spirits, fresh beers and more — crafted to complement every dish.</p>
+  </div>
+</section>
+
+<!-- INFO BAR -->
+<div class="menu-info-bar">
+  <div class="mib-item">
+    <i class="fa fa-wine-glass"></i>
+    <span>Georgia is one of the world's oldest wine regions — we proudly serve authentic Georgian wines from local estates</span>
+  </div>
+  <div class="mib-divider"></div>
+  <div class="mib-item">
+    <i class="fa fa-clock"></i>
+    <span>Kitchen open everyday &nbsp;·&nbsp; 12:00 – 22:00</span>
+  </div>
+</div>
+
+<!-- FILTER TABS -->
+<div class="menu-filters" id="menuFilters">
+  <button class="filter-btn active" data-cat="all">All</button>
+  <button class="filter-btn" data-cat="white-wine">White Wine</button>
+  <button class="filter-btn" data-cat="red-wine">Red Wine</button>
+  <button class="filter-btn" data-cat="spirits">Vodka &amp; Spirits</button>
+  <button class="filter-btn" data-cat="cognac">Cognac</button>
+  <button class="filter-btn" data-cat="whiskey">Whiskey</button>
+  <button class="filter-btn" data-cat="beer">Draft Beer</button>
+  <button class="filter-btn" data-cat="soft-drinks">Soft Drinks</button>
+  <button class="filter-btn" data-cat="tea-coffee">Tea &amp; Coffee</button>
+  <button class="filter-btn" data-cat="tobacco">Tobacco</button>
+</div>
+
+<!-- FULL DRINKS MENU -->
+<section class="menu-page-sec">
+  <div class="menu-page-wrap" id="menuGrid">
+
+    <!-- ══ WHITE WINE ══ -->
+    <div class="menu-section fi" data-section="white-wine">
+      <div class="menu-section-hdr">
+        <img src="images/drinks-rkawiteli-wine.png" alt="White Wine" class="menu-sec-img"/>
+        <h2>White Wine</h2>
+      </div>
+      <div class="menu-items-grid">
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Rkatsiteli Kakhetian</span>
+            <span class="menu-item-desc">1 litre · Twins Wine House</span>
+          </div>
+          <span class="menu-item-price">₾10</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Rkatsiteli European</span>
+            <span class="menu-item-desc">1 litre · Telavi Marani</span>
+          </div>
+          <span class="menu-item-price">₾10</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Rkatsiteli</span>
+            <span class="menu-item-desc">1 litre</span>
+          </div>
+          <span class="menu-item-price">₾18</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Kondoli w/dry</span>
+            <span class="menu-item-desc">Telavi Marani</span>
+          </div>
+          <span class="menu-item-price">₾30</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Kondoli w/dry</span>
+            <span class="menu-item-desc">Telavi Marani</span>
+          </div>
+          <span class="menu-item-price">₾40</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Tvishi w/semi-dry</span>
+            <span class="menu-item-desc">Telavi Marani</span>
+          </div>
+          <span class="menu-item-price">₾45</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Champagne "Bagrationi"</span>
+          </div>
+          <span class="menu-item-price">₾20</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ RED WINE ══ -->
+    <div class="menu-section fi" data-section="red-wine">
+      <div class="menu-section-hdr">
+        <img src="images/drinks-kindzmarauli-wine.png" alt="Red Wine" class="menu-sec-img"/>
+        <h2>Red Wine</h2>
+      </div>
+      <div class="menu-items-grid">
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Saperavi</span>
+            <span class="menu-item-desc">1 litre · Telavi Marani</span>
+          </div>
+          <span class="menu-item-price">₾18</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Saperavi r/dry</span>
+            <span class="menu-item-desc">1 litre · Telavi Marani</span>
+          </div>
+          <span class="menu-item-price">₾25</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Tavkveri r/dry</span>
+            <span class="menu-item-desc">Shato Mukhrani</span>
+          </div>
+          <span class="menu-item-price">₾40</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Kindzmarauli r/semi-sweet</span>
+            <span class="menu-item-desc">Telavi Marani</span>
+          </div>
+          <span class="menu-item-price">₾35</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Khvanchkara r/sweet</span>
+            <span class="menu-item-desc">Telavi Marani</span>
+          </div>
+          <span class="menu-item-price">₾60</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Saperavi (Tbilvino)</span>
+            <span class="menu-item-desc">Red dry wine</span>
+          </div>
+          <span class="menu-item-price">₾20</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ VODKA & SPIRITS ══ -->
+    <div class="menu-section fi" data-section="spirits">
+      <div class="menu-section-hdr">
+        <img src="images/drinks-chacha.png" alt="Vodka & Spirits" class="menu-sec-img"/>
+        <h2>Vodka &amp; Spirits</h2>
+      </div>
+      <div class="menu-items-grid">
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Chacha Kasri</span>
+            <span class="menu-item-desc">Georgian oak-aged chacha</span>
+          </div>
+          <span class="menu-item-price">₾40</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Medovukha</span>
+          </div>
+          <span class="menu-item-price">₾24</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Zelionaya Marka</span>
+          </div>
+          <span class="menu-item-price">₾28</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Khortica Silver</span>
+          </div>
+          <span class="menu-item-price">₾28</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Khortica Platina</span>
+          </div>
+          <span class="menu-item-price">₾30</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Parlament Classic</span>
+          </div>
+          <span class="menu-item-price">₾32</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Celsi</span>
+            <span class="menu-item-desc">Lux / Original / Classic</span>
+          </div>
+          <span class="menu-item-price">₾28</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Nemirof</span>
+          </div>
+          <span class="menu-item-price">₾32</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Medof Classic</span>
+          </div>
+          <span class="menu-item-price">₾27</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Medof Original</span>
+          </div>
+          <span class="menu-item-price">₾30</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Danzka</span>
+          </div>
+          <span class="menu-item-price">₾40</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Stalichnaya</span>
+          </div>
+          <span class="menu-item-price">₾40</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Finlandia</span>
+            <span class="menu-item-desc">50g – 4.20 gel</span>
+          </div>
+          <span class="menu-item-price">₾45</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Absolut</span>
+            <span class="menu-item-desc">50g – 4.50 gel</span>
+          </div>
+          <span class="menu-item-price">₾45</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Tequila</span>
+            <span class="menu-item-desc">50g – 8 gel</span>
+          </div>
+          <span class="menu-item-price">₾8</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Gin Beefeater</span>
+            <span class="menu-item-desc">50g – 5 gel</span>
+          </div>
+          <span class="menu-item-price">₾5</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Gin Tonic</span>
+          </div>
+          <span class="menu-item-price">₾9</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Martini</span>
+            <span class="menu-item-desc">50g – 7 gel</span>
+          </div>
+          <span class="menu-item-price">₾7</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Lux Vodka</span>
+          </div>
+          <span class="menu-item-price">₾22</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Lime Flavoured Vodka</span>
+          </div>
+          <span class="menu-item-price">₾22</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Chacha · Aged in Oak</span>
+          </div>
+          <span class="menu-item-price">₾24</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Peach Flavoured Vodka</span>
+          </div>
+          <span class="menu-item-price">₾22</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Eari</span>
+          </div>
+          <span class="menu-item-price">₾24</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ COGNAC ══ -->
+    <div class="menu-section fi" data-section="cognac">
+      <div class="menu-section-hdr">
+        <img src="images/drinks-cognac.png" alt="Cognac" class="menu-sec-img"/>
+        <h2>Cognac</h2>
+      </div>
+      <div class="menu-items-grid">
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Askaneli 5 Years</span>
+            <span class="menu-item-desc">50g – 4 gel</span>
+          </div>
+          <span class="menu-item-price">₾4</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Sarajishvili 5 Years</span>
+          </div>
+          <span class="menu-item-price">₾5</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Hennessy V.S.O.P.</span>
+            <span class="menu-item-desc">50g – 15 gel</span>
+          </div>
+          <span class="menu-item-price">₾15</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ WHISKEY ══ -->
+    <div class="menu-section fi" data-section="whiskey">
+      <div class="menu-section-hdr">
+        <img src="images/drinks-whiskey.png" alt="Whiskey" class="menu-sec-img"/>
+        <h2>Whiskey</h2>
+      </div>
+      <div class="menu-items-grid">
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Johnnie Walker Red</span>
+            <span class="menu-item-desc">50g – 7 gel</span>
+          </div>
+          <span class="menu-item-price">₾7</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Johnnie Walker Black</span>
+            <span class="menu-item-desc">50g – 12 gel</span>
+          </div>
+          <span class="menu-item-price">₾12</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Jack Daniels</span>
+            <span class="menu-item-desc">50g – 9 gel</span>
+          </div>
+          <span class="menu-item-price">₾9</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Chivas Regal 12 Years</span>
+            <span class="menu-item-desc">50g – 12 gel</span>
+          </div>
+          <span class="menu-item-price">₾12</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ DRAFT BEER ══ -->
+    <div class="menu-section fi" data-section="beer">
+      <div class="menu-section-hdr">
+        <img src="images/drinks-beer.png" alt="Draft Beer" class="menu-sec-img"/>
+        <h2>Draft Beer</h2>
+      </div>
+      <div class="menu-items-grid">
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Hercog</span>
+            <span class="menu-item-desc">0.4 litre</span>
+          </div>
+          <span class="menu-item-price">₾4</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Krombacher</span>
+            <span class="menu-item-desc">0.4 litre</span>
+          </div>
+          <span class="menu-item-price">₾10</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Heineken</span>
+            <span class="menu-item-desc">0.5 litre</span>
+          </div>
+          <span class="menu-item-price">₾8</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Estrella</span>
+            <span class="menu-item-desc">0.4 litre</span>
+          </div>
+          <span class="menu-item-price">₾6</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Civ-Civi</span>
+            <span class="menu-item-desc">0.4 litre</span>
+          </div>
+          <span class="menu-item-price">₾4</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SOFT DRINKS ══ -->
+    <div class="menu-section fi" data-section="soft-drinks">
+      <div class="menu-section-hdr">
+        <img src="images/drinks-soda-water.png" alt="Soft Drinks" class="menu-sec-img"/>
+        <h2>Soft Drinks</h2>
+      </div>
+      <div class="menu-items-grid">
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Lemonade</span>
+            <span class="menu-item-desc">Natakhtari · Zandukeli · Zedazeni</span>
+          </div>
+          <span class="menu-item-price">₾3.5</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Coca-Cola / Fanta</span>
+          </div>
+          <span class="menu-item-price">₾3.5</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Mineral Water</span>
+            <span class="menu-item-desc">Borjomi · Likani · Nabeglavi · Sairme</span>
+          </div>
+          <span class="menu-item-price">₾3.5</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Water</span>
+          </div>
+          <span class="menu-item-price">₾3</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Mountain Water</span>
+          </div>
+          <span class="menu-item-price">₾3</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Juice Santali</span>
+          </div>
+          <span class="menu-item-price">₾5</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Energy Drink XL</span>
+          </div>
+          <span class="menu-item-price">₾6</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ TEA & COFFEE ══ -->
+    <div class="menu-section fi" data-section="tea-coffee">
+      <div class="menu-section-hdr">
+        <img src="images/drinks-teacoffee.png" alt="Tea & Coffee" class="menu-sec-img"/>
+        <h2>Tea &amp; Coffee</h2>
+      </div>
+      <div class="menu-items-grid">
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Tea Ronnefeldt</span>
+          </div>
+          <span class="menu-item-price">₾3</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Turkish Style Coffee</span>
+          </div>
+          <span class="menu-item-price">₾3</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Espresso Lavazza</span>
+          </div>
+          <span class="menu-item-price">₾4</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Americano Lavazza</span>
+          </div>
+          <span class="menu-item-price">₾4</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Cappuccino</span>
+          </div>
+          <span class="menu-item-price">₾5</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Cold Coffee</span>
+          </div>
+          <span class="menu-item-price">₾5</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Cold Coffee with Ice-cream</span>
+          </div>
+          <span class="menu-item-price">₾7</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ TOBACCO ══ -->
+    <div class="menu-section fi" data-section="tobacco">
+      <div class="menu-section-hdr">
+        <img src="images/drinks-smoking.png" alt="Tobacco" class="menu-sec-img"/>
+        <h2>Tobacco</h2>
+      </div>
+      <div class="menu-items-grid">
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Sobranie</span>
+          </div>
+          <span class="menu-item-price">₾12</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Parlament</span>
+          </div>
+          <span class="menu-item-price">₾12</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Marlboro</span>
+          </div>
+          <span class="menu-item-price">₾10</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Kent</span>
+          </div>
+          <span class="menu-item-price">₾10</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <span class="menu-item-name">Winston</span>
+          </div>
+          <span class="menu-item-price">₾10</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="foot-brand"><img src="images/tavla-nav-hero.png" alt="Tavla" class="foot-logo"/></div>
+        <p class="foot-about">Tavla Restaurant is a traditional Georgian restaurant in Tbilisi, Georgia, offering authentic Georgian food, Khachapuri, Khinkali, Georgian bread, BBQ, fine dining, and premium Georgian wines. Established 2009.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="drinks.html">Drinks</a></li>
+          <li><a href="index.html#reservation">Book a Table</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Opening Hours</h4>
+        <ul>
+          <li><span>Restaurant: Mon – Sun: 12:00 – 23:00</span></li>
+          <li><span>Kitchen: Mon – Sun: 12:00 – 22:00</span></li>
+        </ul>
+        <h4 style="margin-top:26px">Contact</h4>
+        <ul>
+          <li><i class="fa fa-phone"></i><a href="tel:+995579611110">+995 579 611 110</a></li>
+          <li><i class="fa fa-envelope"></i><a href="mailto:tavlageo@gmail.com">tavlageo@gmail.com</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Find Us</h4>
+        <ul style="margin-bottom:14px">
+          <li><i class="fa fa-map-marker-alt"></i><span>Tbilisi, Georgia</span></li>
+        </ul>
+        <div class="foot-map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47644.3!2d44.793!3d41.693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40440cd7c3ca9b21%3A0x8ab0c72d0df22e67!2sTbilisi!5e0!3m2!1sen!2sge!4v1700000000000" allowfullscreen="" loading="lazy" title="Tavla location"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>&#169; 2025 Tavla Restaurant. All Rights Reserved.</span>
+    <span>Tbilisi, Georgia</span>
+  </div>
+</footer>
+
+<script>
+  /* ── NAV ── */
+  function toggleMob(){
+    var open=document.getElementById('mobNav').classList.toggle('open');
+    document.getElementById('hamburger').classList.toggle('active',open);
+    document.body.classList.toggle('mob-lock',open);
+  }
+  function closeMob(){
+    document.getElementById('mobNav').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('active');
+    document.body.classList.remove('mob-lock');
+  }
+  var nav=document.getElementById('navbar');
+  function updateNavState(){nav.classList.toggle('scrolled',window.scrollY>20);}
+  window.addEventListener('scroll',updateNavState);
+  updateNavState();
+
+  /* ── FILTER ── */
+  var filterBtns=document.querySelectorAll('.filter-btn');
+  var sections=document.querySelectorAll('.menu-section');
+  filterBtns.forEach(function(btn){
+    btn.addEventListener('click',function(){
+      filterBtns.forEach(function(b){b.classList.remove('active');});
+      btn.classList.add('active');
+      var cat=btn.getAttribute('data-cat');
+      sections.forEach(function(sec){
+        var show = cat==='all' || sec.getAttribute('data-section')===cat;
+        sec.style.display = show ? '' : 'none';
+      });
+    });
+  });
+
+  /* ── FADE IN ── */
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('vis');});
+  },{threshold:0.1});
+  document.querySelectorAll('.fi').forEach(function(el){obs.observe(el);});
+</script>
+</body>
+</html>
