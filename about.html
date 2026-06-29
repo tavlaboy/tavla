@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ka">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us | Tavla თავლა – Georgian Restaurant in Tbilisi</title>
-  <meta name="description" content="About Tavla Restaurant — authentic Georgian cuisine in Tbilisi since 2009. Quality food, warm atmosphere, and unforgettable experiences." />
+  <title>ჩვენს შესახებ | Tavla თავლა – ქართული რესტორანი თბილისში</title>
+  <meta name="description" content="თავლა — ავთენტური ქართული სამზარეულო თბილისში 2009 წლიდან. ხარისხიანი საკვები, თბილი გარემო და დაუვიწყარი გამოცდილება." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="js/lenis.css" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/png" href="images/favicon.png" />
   <style>
@@ -195,6 +196,60 @@
       .lightbox-prev { left: 8px; }
       .lightbox-next { right: 8px; }
     }
+
+    /* ── LANG DROPDOWN ── */
+    .lang-dropdown { position: relative; flex-shrink: 0; }
+    .lang-current {
+      background: none; border: none;
+      color: rgba(255,255,255,.82);
+      font-family: 'Poppins', sans-serif;
+      font-size: .7rem; font-weight: 600;
+      letter-spacing: .12em; text-transform: uppercase;
+      cursor: pointer; padding: 5px 8px;
+      display: flex; align-items: center; gap: 5px;
+      transition: color .2s;
+    }
+    .lang-current:hover { color: #fff; }
+    .lang-current i { font-size: .5rem; opacity: .55; transition: transform .2s; }
+    .lang-dropdown.open .lang-current i,
+    .lang-dropdown:hover .lang-current i { transform: rotate(180deg); }
+    .lang-drop-menu {
+      position: absolute; top: calc(100% + 6px); right: 0;
+      min-width: 54px;
+      background: rgba(14,12,10,.97);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 4px; padding: 4px 0;
+      opacity: 0; visibility: hidden;
+      transform: translateY(-4px);
+      transition: opacity .2s, transform .2s, visibility .2s;
+      z-index: 1100;
+      box-shadow: 0 8px 24px rgba(0,0,0,.35);
+    }
+    .lang-dropdown:hover .lang-drop-menu,
+    .lang-dropdown.open .lang-drop-menu {
+      opacity: 1; visibility: visible; transform: translateY(0);
+    }
+    .lang-opt {
+      display: block; width: 100%;
+      background: none; border: none;
+      color: rgba(255,255,255,.55);
+      font-family: 'Poppins', sans-serif;
+      font-size: .7rem; font-weight: 500;
+      letter-spacing: .12em; text-transform: uppercase;
+      cursor: pointer; padding: 7px 14px;
+      text-align: left; transition: color .2s, background .2s;
+    }
+    .lang-opt:hover { color: #fff; background: rgba(255,255,255,.06); }
+    .mob-lang-wrap {
+      display: none;
+      padding: 14px 28px 20px;
+      border-top: 1px solid rgba(255,255,255,.07);
+    }
+    .mob-lang-wrap .lang-dropdown { display: inline-block; }
+    .mob-lang-wrap .lang-drop-menu { left: 0; right: auto; }
+    @media(max-width:960px){
+      .mob-lang-wrap { display: block; }
+    }
   </style>
 </head>
 <body>
@@ -202,13 +257,22 @@
 <!-- MOBILE NAV DROPDOWN -->
 <div class="mob-nav" id="mobNav">
   <nav class="mob-nav-links">
-    <a href="index.html" onclick="closeMob()">Home</a>
-    <a href="about.html" onclick="closeMob()">About Us</a>
-    <a href="menu.html" onclick="closeMob()">Menu</a>
-    <a href="drinks.html" onclick="closeMob()">Drinks</a>
-    <a href="index.html#reservation" onclick="closeMob()">Book a Table</a>
-    <a href="index.html#contact" onclick="closeMob()">Contact Us</a>
+    <a href="index.html" onclick="closeMob()" data-ge="მთავარი" data-en="Home" data-ru="Главная">მთავარი</a>
+    <a href="about.html" onclick="closeMob()" data-ge="ჩვენს შესახებ" data-en="About Us" data-ru="О нас">ჩვენს შესახებ</a>
+    <a href="menu.html" onclick="closeMob()" data-ge="მენიუ" data-en="Menu" data-ru="Меню">მენიუ</a>
+    <a href="drinks.html" onclick="closeMob()" data-ge="სასმელები" data-en="Drinks" data-ru="Напитки">სასმელები</a>
+    <a href="index.html#reservation" onclick="closeMob()" data-ge="დაჯავშნა" data-en="Book a Table" data-ru="Забронировать">დაჯავშნა</a>
+    <a href="index.html#contact" onclick="closeMob()" data-ge="კონტაქტი" data-en="Contact Us" data-ru="Контакты">კონტაქტი</a>
   </nav>
+  <div class="mob-lang-wrap">
+    <div class="lang-dropdown" id="mobLangDropdown">
+      <button class="lang-current" type="button" aria-haspopup="listbox" aria-expanded="false">GE <i class="fa fa-chevron-down"></i></button>
+      <div class="lang-drop-menu" role="listbox">
+        <button type="button" class="lang-opt" data-lang="en">EN</button>
+        <button type="button" class="lang-opt" data-lang="ru">RU</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- NAVBAR -->
@@ -218,12 +282,21 @@
       <img src="images/tavla-nav-hero.png" alt="Tavla" class="nav-logo"/>
     </a>
     <ul class="nav-menu">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html" style="color:#fff">About Us</a></li>
-      <li><a href="menu.html">Menu</a></li>
-      <li><a href="drinks.html">Drinks</a></li>
-      <li><a href="index.html#contact">Contact Us</a></li>
-      <li><a href="index.html#reservation" class="nav-book">Book a Table</a></li>
+      <li><a href="index.html" data-ge="მთავარი" data-en="Home" data-ru="Главная">მთავარი</a></li>
+      <li><a href="about.html" style="color:#fff" data-ge="ჩვენს შესახებ" data-en="About Us" data-ru="О нас">ჩვენს შესახებ</a></li>
+      <li><a href="menu.html" data-ge="მენიუ" data-en="Menu" data-ru="Меню">მენიუ</a></li>
+      <li><a href="drinks.html" data-ge="სასმელები" data-en="Drinks" data-ru="Напитки">სასმელები</a></li>
+      <li><a href="index.html#contact" data-ge="კონტაქტი" data-en="Contact Us" data-ru="Контакты">კონტაქტი</a></li>
+      <li class="nav-lang">
+        <div class="lang-dropdown" id="langDropdown">
+          <button class="lang-current" type="button" id="langCurrent" aria-haspopup="listbox" aria-expanded="false">GE <i class="fa fa-chevron-down"></i></button>
+          <div class="lang-drop-menu" id="langDropMenu" role="listbox">
+            <button type="button" class="lang-opt" data-lang="en">EN</button>
+            <button type="button" class="lang-opt" data-lang="ru">RU</button>
+          </div>
+        </div>
+      </li>
+      <li><a href="index.html#reservation" class="nav-book" data-ge="დაჯავშნა" data-en="Book a Table" data-ru="Забронировать">დაჯავშნა</a></li>
     </ul>
     <div class="hamburger" id="hamburger" onclick="toggleMob()">
       <span></span><span></span><span></span>
@@ -236,19 +309,17 @@
   <div class="about-hero-bg"></div>
   <div class="about-hero-overlay"></div>
   <div class="about-hero-content fi">
-    <p class="sec-label">Est. 2009</p>
-    <h1>About Tavla</h1>
+    <p class="sec-label" data-ge="2009 წლიდან" data-en="Est. 2009" data-ru="С 2009 года">2009 წლიდან</p>
+    <h1 data-ge="თავლის შესახებ" data-en="About Tavla" data-ru="О Тавле">თავლის შესახებ</h1>
   </div>
 </section>
 
 <!-- ABOUT TEXT -->
 <section class="about-text-sec">
   <div class="about-text-inner">
-    <p class="about-main-text fi">
-      თავლა 2009 წლიდან მოყოლებული ამაყად აგრძელებს მუშაობას. გამორჩეული გემოებითა, მუდმივი ხარისხით, სასიამოვნო გარემოთა და ხელმისაწვდომი ფასებით.
-    </p>
+    <p class="about-main-text fi" data-ge="თავლა 2009 წლიდან მოყოლებული ამაყად აგრძელებს მუშაობას. გამორჩეული გემოებითა, მუდმივი ხარისხით, სასიამოვნო გარემოთა და ხელმისაწვდომი ფასებით." data-en="Since 2009, Tavla has proudly continued its journey. With exceptional flavours, consistent quality, a pleasant atmosphere, and affordable prices." data-ru="С 2009 года Тавла с гордостью продолжает свой путь. Исключительные вкусы, постоянное качество, приятная атмосфера и доступные цены.">თავლა 2009 წლიდან მოყოლებული ამაყად აგრძელებს მუშაობას. გამორჩეული გემოებითა, მუდმივი ხარისხით, სასიამოვნო გარემოთა და ხელმისაწვდომი ფასებით.</p>
     <blockquote class="about-quote fi">
-      <p>თავლას პერსონალი დიდ მნიშვენლობას ანიჭებს თითოეული მომხარებლის გამოცდილებას. მუდმივად ვკითხულობთ შეფასებებს და ვმუშაობთ გაუმჯობესებაზე.</p>
+      <p data-ge="თავლას პერსონალი დიდ მნიშვენლობას ანიჭებს თითოეული მომხარებლის გამოცდილებას. მუდმივად ვკითხულობთ შეფასებებს და ვმუშაობთ გაუმჯობესებაზე." data-en="At Tavla, our staff place great importance on every guest's experience. We continuously read reviews and work on improvements." data-ru="В Тавле персонал придаёт большое значение опыту каждого гостя. Мы постоянно читаем отзывы и работаем над улучшениями.">თავლას პერსონალი დიდ მნიშვენლობას ანიჭებს თითოეული მომხარებლის გამოცდილებას. მუდმივად ვკითხულობთ შეფასებებს და ვმუშაობთ გაუმჯობესებაზე.</p>
     </blockquote>
   </div>
 </section>
@@ -257,27 +328,27 @@
 <div class="about-stats fi">
   <div class="stat-item">
     <div class="stat-num">2009</div>
-    <div class="stat-label">Established</div>
+    <div class="stat-label" data-ge="დაარსებული" data-en="Established" data-ru="Основан">დაარსებული</div>
   </div>
   <div class="stat-item">
     <div class="stat-num">15+</div>
-    <div class="stat-label">Years of Service</div>
+    <div class="stat-label" data-ge="წლის გამოცდილება" data-en="Years of Service" data-ru="Лет работы">წლის გამოცდილება</div>
   </div>
   <div class="stat-item">
     <div class="stat-num">100%</div>
-    <div class="stat-label">Own Farm Cheese</div>
+    <div class="stat-label" data-ge="საკუთარი ფერმის ყველი" data-en="Own Farm Cheese" data-ru="Сыр со своей фермы">საკუთარი ფერმის ყველი</div>
   </div>
   <div class="stat-item">
     <div class="stat-num">★★★★★</div>
-    <div class="stat-label">Guest Reviews</div>
+    <div class="stat-label" data-ge="სტუმართა შეფასებები" data-en="Guest Reviews" data-ru="Отзывы гостей">სტუმართა შეფასებები</div>
   </div>
 </div>
 
 <!-- GALLERY -->
 <section class="gallery-sec">
   <div class="gallery-head fi">
-    <p class="sec-label">Our Space</p>
-    <h2>A Glimpse of Tavla</h2>
+    <p class="sec-label" data-ge="ჩვენი სივრცე" data-en="Our Space" data-ru="Наше пространство">ჩვენი სივრცე</p>
+    <h2 data-ge="თავლის გლუვი ხედვა" data-en="A Glimpse of Tavla" data-ru="Взгляд на Тавлу">თავლის გლუვი ხედვა</h2>
   </div>
   <div class="gallery-grid">
     <div class="gallery-item fi" data-index="0">
@@ -348,47 +419,57 @@
     <div class="footer-grid">
       <div>
         <div class="foot-brand"><img src="images/tavla-nav-hero.png" alt="Tavla" class="foot-logo"/></div>
-        <p class="foot-about">Tavla Restaurant is a traditional Georgian restaurant in Tbilisi, Georgia, offering authentic Georgian food, Khachapuri, Khinkali, Georgian bread, BBQ, fine dining, and premium Georgian wines. Established 2009.</p>
+        <p class="foot-about" data-ge="თავლა არის ტრადიციული ქართული რესტორანი თბილისში, საქართველოში, რომელიც გთავაზობთ ავთენტურ ქართულ საკვებს, ხაჭაპურს, ხინკალს, ქართულ პურს, ბარბეკიუს, ფაინდაინინგსა და პრემიუმ ქართულ ღვინოებს. დაარსებული 2009 წელს." data-en="Tavla Restaurant is a traditional Georgian restaurant in Tbilisi, Georgia, offering authentic Georgian food, Khachapuri, Khinkali, Georgian bread, BBQ, fine dining, and premium Georgian wines. Established 2009." data-ru="Ресторан Тавла — традиционный грузинский ресторан в Тбилиси, предлагающий аутентичную грузинскую кухню, хачапури, хинкали, грузинский хлеб, барбекю, изысканные блюда и премиальные грузинские вина. Основан в 2009 году.">თავლა არის ტრადიციული ქართული რესტორანი თბილისში, საქართველოში, რომელიც გთავაზობთ ავთენტურ ქართულ საკვებს, ხაჭაპურს, ხინკალს, ქართულ პურს, ბარბეკიუს, ფაინდაინინგსა და პრემიუმ ქართულ ღვინოებს. დაარსებული 2009 წელს.</p>
       </div>
       <div>
-        <h4>Quick Links</h4>
+        <h4 data-ge="ბმულები" data-en="Quick Links" data-ru="Ссылки">ბმულები</h4>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="menu.html">Menu</a></li>
-          <li><a href="drinks.html">Drinks</a></li>
-          <li><a href="index.html#reservation">Book a Table</a></li>
+          <li><a href="index.html" data-ge="მთავარი" data-en="Home" data-ru="Главная">მთავარი</a></li>
+          <li><a href="about.html" data-ge="ჩვენს შესახებ" data-en="About" data-ru="О нас">ჩვენს შესახებ</a></li>
+          <li><a href="menu.html" data-ge="მენიუ" data-en="Menu" data-ru="Меню">მენიუ</a></li>
+          <li><a href="drinks.html" data-ge="სასმელები" data-en="Drinks" data-ru="Напитки">სასმელები</a></li>
+          <li><a href="index.html#reservation" data-ge="დაჯავშნა" data-en="Book a Table" data-ru="Забронировать">დაჯავშნა</a></li>
+          <li><a href="privacy.html" data-ge="კონფიდენციალურობა" data-en="Privacy Policy" data-ru="Конфиденциальность">კონფიდენციალურობა</a></li>
+          <li><a href="terms.html" data-ge="წესები და პირობები" data-en="Terms &amp; Conditions" data-ru="Условия">წესები და პირობები</a></li>
         </ul>
       </div>
       <div>
-        <h4>Opening Hours</h4>
+        <h4 data-ge="სამუშაო საათები" data-en="Opening Hours" data-ru="Часы работы">სამუშაო საათები</h4>
         <ul>
-          <li><span>Restaurant: Mon – Sun: 12:00 – 23:00</span></li>
-          <li><span>Kitchen: Mon – Sun: 12:00 – 22:00</span></li>
+          <li><span data-ge="რესტორანი: ორშ – კვი: 12:00 – 23:00" data-en="Restaurant: Mon – Sun: 12:00 – 23:00" data-ru="Ресторан: Пн – Вс: 12:00 – 23:00">რესტორანი: ორშ – კვი: 12:00 – 23:00</span></li>
+          <li><span data-ge="სამზარეულო: ორშ – კვი: 12:00 – 22:00" data-en="Kitchen: Mon – Sun: 12:00 – 22:00" data-ru="Кухня: Пн – Вс: 12:00 – 22:00">სამზარეულო: ორშ – კვი: 12:00 – 22:00</span></li>
         </ul>
-        <h4 style="margin-top:26px">Contact</h4>
+        <h4 style="margin-top:26px" data-ge="კონტაქტი" data-en="Contact" data-ru="Контакты">კონტაქტი</h4>
         <ul>
-          <li><i class="fa fa-phone"></i><a href="tel:+995579611110">+995 579 611 110</a></li>
+          <li><i class="fa fa-phone"></i><a href="tel:+995579611110">+995 579 61 11 10</a></li>
           <li><i class="fa fa-envelope"></i><a href="mailto:tavlageo@gmail.com">tavlageo@gmail.com</a></li>
+          <li><i class="fa fa-globe"></i><a href="https://tavla-tbilisi.com" target="_blank" rel="noopener">tavla-tbilisi.com</a></li>
         </ul>
       </div>
       <div>
-        <h4>Find Us</h4>
+        <h4 data-ge="მოგვძებნეთ" data-en="Find Us" data-ru="Как нас найти">მოგვძებნეთ</h4>
         <ul style="margin-bottom:14px">
-          <li><i class="fa fa-map-marker-alt"></i><span>Tbilisi, Georgia</span></li>
+          <li><i class="fa fa-map-marker-alt"></i><a href="https://www.google.com/maps/place/%E1%83%A0%E1%83%94%E1%83%A1%E1%83%90%E1%83%A0%E1%83%90%E1%83%9C%E1%83%98+%E1%83%97%E1%83%90%E1%83%95%E1%83%9A%E1%83%90/@41.752976,44.7887033,18z/data=!4m6!3m5!1s0x40447283ad52dd43:0xcaa649d01fdec4e2!8m2!3d41.752976!4d44.7887033!16s%2Fg%2F11cs0s905s?hl=ka" target="_blank" rel="noopener" data-ge="დავით გურამიშვილის გამზირი 8, თბილისი 0192, საქართველო" data-en="8 Guramishvili Ave, Tbilisi 0192, Georgia" data-ru="пр. Давида Гурамишвили, 8, Тбилиси 0192, Грузия">დავით გურამიშვილის გამზირი 8, თბილისი 0192, საქართველო</a></li>
         </ul>
         <div class="foot-map">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47644.3!2d44.793!3d41.693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40440cd7c3ca9b21%3A0x8ab0c72d0df22e67!2sTbilisi!5e0!3m2!1sen!2sge!4v1700000000000" allowfullscreen="" loading="lazy" title="Tavla location"></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2978.454018!2d44.786129!3d41.752976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40447283ad52dd43%3A0xcaa649d01fdec4e2!2z4YOg4YWd4YOo4YOg4YWh4YOgIOGDoeGDmuGDmOGDmuGDmOGDnyDhg6Lhg5jhg6Lhg5Dhg6Dhg6nhg6Dhg6jhg6Eg4YOY4YOV4YOR4YOY!5e0!3m2!1ska!2sge!4v1719763200000" allowfullscreen="" loading="lazy" title="Tavla location"></iframe>
         </div>
       </div>
     </div>
   </div>
   <div class="foot-bottom">
-    <span>&#169; 2025 Tavla Restaurant. All Rights Reserved.</span>
-    <span>Tbilisi, Georgia</span>
+    <span data-ge="&#169; 2026 თავლა. ყველა უფლება დაცულია." data-en="&#169; 2026 Tavla Restaurant. All Rights Reserved." data-ru="&#169; 2026 Ресторан Тавла. Все права защищены.">&#169; 2026 თავლა. ყველა უფლება დაცულია.</span>
+    <div class="foot-legal">
+      <a href="privacy.html" data-ge="კონფიდენციალურობა" data-en="Privacy Policy" data-ru="Конфиденциальность">კონფიდენციალურობა</a>
+      <span class="foot-legal-sep">·</span>
+      <a href="terms.html" data-ge="წესები და პირობები" data-en="Terms &amp; Conditions" data-ru="Условия">წესები და პირობები</a>
+    </div>
+    <span data-ge="დავით გურამიშვილის გამზირი 8, თბილისი 0192" data-en="8 Guramishvili Ave, Tbilisi 0192" data-ru="пр. Давида Гурамишвили, 8, Тбилиси 0192">დავით გურამიშვილის გამზირი 8, თბილისი 0192</span>
   </div>
 </footer>
 
+<script src="js/lenis.min.js"></script>
+<script src="js/lenis-init.js"></script>
 <script>
   /* ── NAV ── */
   function toggleMob(){
@@ -401,10 +482,61 @@
     document.getElementById('hamburger').classList.remove('active');
     document.body.classList.remove('mob-lock');
   }
-  var nav=document.getElementById('navbar');
-  function updateNavState(){nav.classList.toggle('scrolled',window.scrollY>20);}
-  window.addEventListener('scroll',updateNavState);
-  updateNavState();
+
+  /* ── LANGUAGE ── */
+  var langLabels = {ge:'GE', en:'EN', ru:'RU'};
+  var pageTitles = {
+    ge: 'ჩვენს შესახებ | Tavla თავლა',
+    en: 'About Us | Tavla თავლა – Georgian Restaurant',
+    ru: 'О нас | Tavla თავლა – Грузинский ресторан'
+  };
+
+  function updateLangDropdowns(lang){
+    document.querySelectorAll('.lang-dropdown').forEach(function(dd){
+      var currentBtn=dd.querySelector('.lang-current');
+      var menu=dd.querySelector('.lang-drop-menu');
+      currentBtn.innerHTML=langLabels[lang]+' <i class="fa fa-chevron-down"></i>';
+      menu.innerHTML='';
+      ['ge','en','ru'].filter(function(l){return l!==lang;}).forEach(function(l){
+        var btn=document.createElement('button');
+        btn.type='button';
+        btn.className='lang-opt';
+        btn.setAttribute('data-lang',l);
+        btn.textContent=langLabels[l];
+        btn.addEventListener('click',function(e){
+          e.stopPropagation();
+          setLang(l);
+          dd.classList.remove('open');
+        });
+        menu.appendChild(btn);
+      });
+    });
+  }
+
+  function setLang(lang){
+    document.querySelectorAll('[data-ge]').forEach(function(el){
+      var t=el.getAttribute('data-'+lang);
+      if(t!==null) el.textContent=t;
+    });
+    document.documentElement.lang=lang==='ge'?'ka':lang;
+    document.title=pageTitles[lang];
+    updateLangDropdowns(lang);
+    localStorage.setItem('tavla-lang',lang);
+  }
+
+  document.querySelectorAll('.lang-dropdown').forEach(function(dd){
+    dd.querySelector('.lang-current').addEventListener('click',function(e){
+      e.stopPropagation();
+      document.querySelectorAll('.lang-dropdown.open').forEach(function(other){
+        if(other!==dd)other.classList.remove('open');
+      });
+      dd.classList.toggle('open');
+    });
+  });
+  document.addEventListener('click',function(){
+    document.querySelectorAll('.lang-dropdown.open').forEach(function(dd){dd.classList.remove('open');});
+  });
+  setLang(localStorage.getItem('tavla-lang')||'ge');
 
   /* ── LIGHTBOX ── */
   var items=document.querySelectorAll('.gallery-item');
