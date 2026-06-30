@@ -4,20 +4,102 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tavla | თავლა – ქართული რესტორანი თბილისში</title>
-  <meta name="description" content="თავლა – აუთენტური ქართული რესტორანი თბილისში. ხაჭაპური, ხინკალი, ქართული ბარბეკიუ და პრემიუმ ქართული ღვინო 2009 წლიდან." />
+  <meta name="description" content="თავლა – აუთენტური ქართული რესტორანი თბილისში. ხაჭაპური, ხინკალი, ბარბეკიუ და ქართული ღვინო 2009 წლიდან." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0e0c0a" />
+  <link rel="canonical" href="https://tavla-tbilisi.com/" />
+  <meta property="og:site_name" content="Tavla | თავლა" />
+  <meta property="og:locale" content="ka_GE" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:locale:alternate" content="ru_RU" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@300;400;500;600&family=Noto+Sans+Georgian:wght@300;400;500;600&family=Noto+Serif+Georgian:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="js/lenis.css" />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://tavla-tbilisi.com/#website",
+        "url": "https://tavla-tbilisi.com/",
+        "name": "Tavla",
+        "alternateName": "თავლა",
+        "inLanguage": ["ka", "en", "ru"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://tavla-tbilisi.com/"
+          }
+        ]
+      },
+      {
+        "@type": "Restaurant",
+        "@id": "https://tavla-tbilisi.com/#restaurant",
+        "name": "Tavla",
+        "alternateName": "თავლა",
+        "url": "https://tavla-tbilisi.com/",
+        "image": "https://tavla-tbilisi.com/images/index-chefs-pick.png",
+        "description": "Authentic Georgian restaurant in Tbilisi since 2009.",
+        "telephone": "+995579611110",
+        "email": "tavlageo@gmail.com",
+        "servesCuisine": "Georgian",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "8 Guramishvili Ave",
+          "addressLocality": "Tbilisi",
+          "postalCode": "0192",
+          "addressCountry": "GE"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 41.752976,
+          "longitude": 44.7887033
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+            "opens": "12:00",
+            "closes": "23:00"
+          }
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.5",
+          "reviewCount": "700"
+        },
+        "sameAs": [
+          "https://tavla-tbilisi.com",
+          "https://www.google.com/maps/place/%E1%83%A0%E1%83%94%E1%83%A1%E1%83%90%E1%83%A0%E1%83%90%E1%83%9C%E1%83%98+%E1%83%97%E1%83%90%E1%83%95%E1%83%9A%E1%83%90/@41.752976,44.7887033,18z/data=!4m6!3m5!1s0x40447283ad52dd43:0xcaa649d01fdec4e2!8m2!3d41.752976!4d44.7887033!16s%2Fg%2F11cs0s905s?hl=ka"
+        ]
+      }
+    ]
+  }
+  </script>
+  <script src="js/seo-config.js"></script>
+  <script src="js/seo.js"></script>
+  <script>initSeo('index', localStorage.getItem('tavla-lang') || 'ge');</script>
   <style>
     .lang-dropdown { position: relative; flex-shrink: 0; }
     .lang-current {
       background: none; border: none;
       color: rgba(255,255,255,.82);
-      font-family: 'Poppins', sans-serif;
+      font-family: var(--font-sans);
       font-size: .7rem; font-weight: 600;
       letter-spacing: .12em; text-transform: uppercase;
       cursor: pointer; padding: 5px 8px;
@@ -48,7 +130,7 @@
       display: block; width: 100%;
       background: none; border: none;
       color: rgba(255,255,255,.55);
-      font-family: 'Poppins', sans-serif;
+      font-family: var(--font-sans);
       font-size: .7rem; font-weight: 500;
       letter-spacing: .12em; text-transform: uppercase;
       cursor: pointer; padding: 7px 14px;
@@ -86,7 +168,7 @@
 <nav class="navbar" id="navbar">
   <div class="navbar-inner">
     <a href="#" class="nav-brand" aria-label="Tavla home">
-      <img src="images/tavla-nav-hero.png" alt="Tavla" class="nav-logo"/>
+      <img src="images/tavla-nav-hero.png" alt="Tavla Georgian Restaurant, Tbilisi" class="nav-logo"/>
     </a>
     <ul class="nav-menu">
       <li><a href="#" data-ge="მთავარი" data-en="Home" data-ru="Главная">მთავარი</a></li>
@@ -125,7 +207,7 @@
   <div class="hero-split">
     <div class="hero-left">
       <div style="max-width:440px">
-        <div class="hero-badge"><i class="fa fa-star"></i> <span data-ge="დაარსებულია 2009 წელს" data-en="Established in 2009" data-ru="С 2009 года">დაარსებულია 2009 წელს</span></div>
+        <p class="sec-label hero-est" data-ge="2009 წლიდან" data-en="Est. 2009" data-ru="С 2009 года">2009 წლიდან</p>
         <h1 class="hero-h1" data-ge="თავლა, ნამდვილი ქართული სამზარეულოს გამოცდილება თბილისში" data-en="Tavla invites you to experience the true essence of Georgian cuisine in Tbilisi" data-ru="Тавла познакомьтесь с истинной грузинской кухни в Тбилиси">თავლა, ნამდვილი ქართული სამზარეულოს გამოცდილება თბილისში</h1>
         <p class="hero-p" data-i18n-html data-ge="ჩვენი რესტორანი თბილისში ქართული სამზარეულოს წამყვანია, სადაც ტრადიცია, გემო და თბილი ოჯახურობა ერთად არის თავმოყრილი. გთავაზობთ ახლად გამომცხვარ <a href=&quot;menu.html&quot;>ხაჭაპურს</a>, ხელით დაკეცილ <a href=&quot;menu.html&quot;>ხინკალს</a> და ოსტატურ <a href=&quot;menu.html&quot;>მრავალ კერძებს</a>." data-en="Our restaurant has been a leading destination for authentic Georgian cuisine, where tradition, flavour, and warm hospitality come together. We proudly serve freshly baked <a href=&quot;menu.html&quot;>Khachapuri</a>, hand-folded <a href=&quot;menu.html&quot;>Khinkali</a>, and expertly made <a href=&quot;menu.html&quot;>numerous dishes</a>." data-ru="С 2009 года наш ресторан в Тбилиси является одним из лучших мест грузинской кухни, где сочетаются традиции, вкус и тёплое гостеприимство. Мы гордимся свеже-выпеченным <a href=&quot;menu.html&quot;>хачапури</a>, ручной <a href=&quot;menu.html&quot;>хинкали</a> и мастерски приготовленные <a href=&quot;menu.html&quot;>блюда</a>.">2009 წლიდან ჩვენი რესტორანი თბილისში ქართული სამზარეულოს აუთენტური გემოვნების წამყვანი დანიშნულებაა, სადაც ტრადიცია, გემო და თბილი ოჯახურობა ერთადაა. ვემსახურებით ახლად გამომცხვარ <a href="menu.html">ხაჭაპურს</a>, ხელით დაკეცილ <a href="menu.html">ხინკალს</a> და ოსტატურად შემწებულ <a href="menu.html">ქართულ ბარბეკიუს</a>.</p>
         <div class="hero-btns">
@@ -135,27 +217,35 @@
       </div>
     </div>
     <div class="hero-right">
-      <img src="images/tavla-hero-index.png" alt="Tavla Restaurant Tbilisi"/>
-      <div class="hero-right-ov"></div>
+      <div class="hero-right-visual">
+        <img src="images/tavla-hero-index.png" alt="Tavla restaurant interior, Tbilisi" fetchpriority="high"/>
+        <div class="hero-right-ov"></div>
+      </div>
       <div class="hero-dishes">
-        <div class="hdish">
-          <div class="hdish-img"><img src="./images/index-khachapuri.png" alt="Khachapuri"/></div>
-          <div class="hdish-name" data-ge="ხაჭაპური" data-en="Khachapuri" data-ru="Хачапури">ხაჭაპური</div>
-          <div class="hdish-sub" data-ge="ქართული ყველის პური" data-en="Georgian cheese bread" data-ru="Грузинский сырный хлеб">ქართული ყველის პური</div>
-          <div class="hdish-stars">★★★★★</div>
-        </div>
-        <div class="hdish">
-          <div class="hdish-img"><img src="./images/index-khinkali.png" alt="Khinkali"/></div>
-          <div class="hdish-name" data-ge="ხინკალი" data-en="Khinkali" data-ru="Хинкали">ხინკალი</div>
-          <div class="hdish-sub" data-ge="ტრადიციული ხინკალი" data-en="Traditional Dumplings" data-ru="Традиционные Хинкали">ტრადიციული პელმენი</div>
-          <div class="hdish-stars">★★★★★</div>
-        </div>
-        <div class="hdish">
-          <div class="hdish-img"><img src="./images/xbo-neknebi-ajikit.PNG" alt="Georgian Salad"/></div>
-          <div class="hdish-name" data-ge="ხბოს ნეკნი აჯიკით" data-en="Ribs with Ajika" data-ru="Рёбра с аджикой">ხბოს ნეკნი აჯიკით</div>
-          <div class="hdish-sub" data-ge="აჯიკის სოუსით" data-en="Ajika dressing" data-ru="аджиковый соус">კაკლის სოუსით</div>
-          <div class="hdish-stars">★★★★★</div>
-        </div>
+        <article class="hdish">
+          <div class="hdish-media"><img src="./images/index-khachapuri.png" alt="Khachapuri"/></div>
+          <div class="hdish-body">
+            <h3 class="hdish-name" data-ge="ხაჭაპური" data-en="Khachapuri" data-ru="Хачапури">ხაჭაპური</h3>
+            <p class="hdish-sub" data-ge="ქართული ყველის პური" data-en="Georgian cheese bread" data-ru="Грузинский сырный хлеб">ქართული ყველის პური</p>
+            <div class="hdish-stars" aria-hidden="true"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+          </div>
+        </article>
+        <article class="hdish">
+          <div class="hdish-media"><img src="./images/index-khinkali.png" alt="Khinkali"/></div>
+          <div class="hdish-body">
+            <h3 class="hdish-name" data-ge="ხინკალი" data-en="Khinkali" data-ru="Хинкали">ხინკალი</h3>
+            <p class="hdish-sub" data-ge="ტრადიციული ხინკალი" data-en="Traditional Dumplings" data-ru="Традиционные Хинкали">ტრადიციული პელმენი</p>
+            <div class="hdish-stars" aria-hidden="true"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+          </div>
+        </article>
+        <article class="hdish">
+          <div class="hdish-media"><img src="./images/xbo-neknebi-ajikit.PNG" alt="Ribs with ajika"/></div>
+          <div class="hdish-body">
+            <h3 class="hdish-name" data-ge="ნეკნი აჯიკით" data-en="Ajika Ribs" data-ru="Рёбра с аджикой">ხბოს ნეკნი აჯიკით</h3>
+            <p class="hdish-sub" data-ge="აჯიკის სოუსით" data-en="Ribs with Ajika sauce" data-ru="аджиковый соус">კაკლის სოუსით</p>
+            <div class="hdish-stars" aria-hidden="true"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+          </div>
+        </article>
       </div>
     </div>
   </div>
@@ -177,17 +267,17 @@
           <button onclick="sNav(1)" aria-label="Next"><i class="fa fa-chevron-right"></i></button>
         </div>
         <div class="slider-thumbs" id="thumbs">
-          <img src="images/about-us1.png" class="active" onclick="sSet(0)" alt="t0"/>
-          <img src="images/about-us2.png" onclick="sSet(1)" alt="t1"/>
-          <img src="images/about-us3.png" onclick="sSet(2)" alt="t2"/>
-          <img src="images/about-us-gallery.png" onclick="sSet(3)" alt="t3"/>
+          <img src="images/about-us1.png" class="active" onclick="sSet(0)" alt="Tavla interior view 1"/>
+          <img src="images/about-us2.png" onclick="sSet(1)" alt="Tavla interior view 2"/>
+          <img src="images/about-us3.png" onclick="sSet(2)" alt="Tavla interior view 3"/>
+          <img src="images/about-us-gallery.png" onclick="sSet(3)" alt="Tavla interior view 4"/>
         </div>
       </div>
       <div class="fi">
         <p class="sec-label" data-ge="ჩვენს შესახებ" data-en="About Us" data-ru="О нас">ჩვენს შესახებ</p>
         <h2 class="sec-h2" data-ge="ერთ-ერთი საუკეთესო ქართული რესტორანი თბილისში" data-en="One of Tbilisi's Finest Georgian Restaurants" data-ru="Один из лучших грузинских ресторанов Тбилиси">თავლა – ერთ-ერთი საუკეთესო ქართული რესტორანი თბილისში</h2>
         <p class="sec-p" data-ge="თავლა არის ტრადიციული ქართული რესტორანი სავსე თბილი ოჯახურობითა და ნამდვილი ქართული გემოებით. წამყვანი დანიშნულება მათთვის, ვინც ეძებს ორიგინალურ ქართულ სამზარეულოს. თავლაში ყოველი კერძი ტრადიციითა და ხარისხით მზადდება, ქმნის დაუვიწყარ ქართულ გამოცდილებას." data-en="Traditional Georgian restaurant, full authentic flavours, warm hospitality, and a true taste of Georgia. We are a leading destination for people seeking authentic Georgian cuisine, including Khinkali, Khachapuri, and Georgian wine. At Tavla, every dish is crafted with tradition and quality, creating a memorable Georgian dining experience." data-ru="Традиционный грузинский ресторан в Тбилиси, тёплое гостеприимство и настоящий вкус Грузии, являемся одним из лучших мест для тех, кто ищет аутентичную грузинскую кухню: хинкали, хачапури и грузинское вино. В Тавле каждое блюдо готовится с традицией и качеством, создавая незабываемый грузинский ужин.">თავლა (თავლა) არის ტრადიციული ქართული რესტორანი თბილისში, რომელიც გთავაზობთ აუთენტურ გემოებს, თბილ ოჯახურობასა და ნამდვილ ქართულ გამოცდილებას. ჩვენ ვართ წამყვანი დანიშნულება მათთვის, ვინც ეძებს აუთენტურ ქართულ სამზარეულოს: ხინკალს, ხაჭაპურსა და პრემიუმ ქართულ ღვინოს. თავლაში ყოველი კერძი ტრადიციითა და ხარისხით მზადდება, ქმნის დაუვიწყარ ქართულ გამოცდილებას თბილისის გულში.</p>
-        <p class="sec-p" style="margin-top:15px" data-ge="ჩვენი გამოცდილი მზარეულები ტრადიციულ რეცეპტებს იყენებენ, რომლებიც მზადდება ნატურალური პროდუქტისგან. ახლად გამომცხვარი ქართული პურიდან მდიდარ და გემრიელ ხაჭაპურამდე, ქართულ მწვადსა და ახალ ბოსტნეულამდე." data-en="Our expert Georgian chefs use traditional recipes passed down over generations to create authentic meals that reflect the true essence of Georgian cuisine. From freshly baked Georgian bread to rich and flavorful Khachapuri, Georgian BBQ, fresh and signature sauces, every dish is prepared to deliver an unforgettable experience." data-ru="Наши опытные грузинские повара используют традиционные рецепты, передаваемые из поколения в поколение, чтобы создавать аутентичные блюда, отражающие истинную сущность грузинской кухни. От свежевыпеченного грузинского хлеба до насыщенного хачапури, шашлык и фирменных соусов. Каждое блюдо готовится для незабываемого ужина.">თავლაში ჩვენი გამოცდილი ქართველი მზარეულები თაობების მიერ გადაცემულ ტრადიციულ რეცეპტებს იყენებენ, რათა შექმნან აუთენტური კერძები, რომლებიც ქართული სამზარეულოს ნამდვილ საფუძველს ასახავენ. ახლად გამომცხვარი ქართული პურიდან მდიდარ და გემრიელ ხაჭაპურამდე, ქართული ბარბეკიუდან, ახალ ბოსტნეულსა და მწვანილებამდე. ყოველი კერძი დაუვიწყარ ქართულ კვებას ქმნის.</p>
+        <p class="sec-p" style="margin-top:15px" data-ge="ჩვენი მზარეულები ტრადიციულ რეცეპტებს იყენებენ, მზადდება სრულიად ნატურალური პროდუქტისგან. ახლად გამომცხვარი ქართული პურიდან მდიდარ და გემრიელ ხაჭაპურამდე, ქართულ მწვადსა და ახალ ბოსტნეულამდე." data-en="Our expert Georgian chefs use traditional recipes passed down over generations to create authentic meals that reflect the true essence of Georgian cuisine. From freshly baked Georgian bread to rich and flavorful Khachapuri, Georgian BBQ, fresh and signature sauces, every dish is prepared to deliver an unforgettable experience." data-ru="Наши опытные грузинские повара используют традиционные рецепты, передаваемые из поколения в поколение, чтобы создавать аутентичные блюда, отражающие истинную сущность грузинской кухни. От свежевыпеченного грузинского хлеба до насыщенного хачапури, шашлык и фирменных соусов. Каждое блюдо готовится для незабываемого ужина.">თავლაში ჩვენი გამოცდილი ქართველი მზარეულები თაობების მიერ გადაცემულ ტრადიციულ რეცეპტებს იყენებენ, რათა შექმნან აუთენტური კერძები, რომლებიც ქართული სამზარეულოს ნამდვილ საფუძველს ასახავენ. ახლად გამომცხვარი ქართული პურიდან მდიდარ და გემრიელ ხაჭაპურამდე, ქართული ბარბეკიუდან, ახალ ბოსტნეულსა და მწვანილებამდე. ყოველი კერძი დაუვიწყარ ქართულ კვებას ქმნის.</p>
         <a href="menu.html" class="btn btn-dark" style="margin-top:28px;display:inline-block" data-ge="გაიგეთ მეტი" data-en="Read More" data-ru="Подробнее">გაიგეთ მეტი</a>
       </div>
     </div>
@@ -200,7 +290,7 @@
     <div class="menu-inner">
       <div class="fi">
         <p class="sec-label" data-ge="ჩვენი მენიუ" data-en="Our Menu" data-ru="Наше меню">ჩვენი მენიუ</p>
-        <h2 class="sec-h2" data-ge="საკუთარი ნატურალური ყველი და ახლად გამომცხვარი ხაჭაპური" data-en="House-Made Georgian Cheese &amp; Freshly Baked Khachapuri" data-ru="Домашний грузинский сыр и свежий хачапури">საკუთარი ქართული ყველი და ახლად გამომცხვარი ხაჭაპური</h2>
+        <h2 class="sec-h2" data-ge="საკუთარი ფერმის ყველი, სრულიად ნატურალური" data-en="House-Made Georgian Cheese &amp; Fully Natural" data-ru="Сыр с нашей собственной фермы, полностью натуральный.">საკუთარი ქართული ყველი და ახლად გამომცხვარი ხაჭაპური</h2>
         <p class="sec-p" data-ge="ქართული სამზარეულოს განსაზღვრული ელემენტია ყველი, რომელსაც 100% ნატურალურად თავად ვამზადებთ. ამ ტრადიციას ვაგრძელებთ, ვამზადებთ საკუთარი ფერმისგან რაც უზრუნველყოფს სიამოვნებას, სიმდიდრესა და ჯანმრთელობას. " data-en="Cheese is one of the most defining elements in Georgian Cuisine, with a history spanning more than 2,000 years. At Tavla, we continue this tradition by preparing house-made Georgian cheese in-house." data-ru="Одним из определяющих элементов грузинской кухни является сыр с историей более 2000 лет. В Тавле мы продолжаем эту традицию, готовя домашний грузинский сыр, обеспечивая свежесть и насыщенность.">ქართული სამზარეულოს განსაზღვრული ელემენტია ყველი, რომლის ისტორია 2000 წელზე მეტს მოიცავს. თავლაში ამ ტრადიციას ვაგრძელებთ, ყველს საკუთრად ვამზადებთ, რაც უზრუნველყოფს სიამოვნებას, სიმდიდრესა და აუთენტურობას ყოველ ნაკრძალში. ეს საშუალებას გვაძლევს აღვადგინოთ ნამდვილი გემოები, რაც გრძნობთ ყოველ კერძში, განსაკუთრებით ახლად გამომცხვარ ხაჭაპურში. თავლა ფართოდ მიიჩნევა საუკეთესო ხაჭაპურის რესტორანად თბილისში.</p>
         <p class="sec-p" style="margin-top:14px" data-ge="გაეცანით სრულ ქართულ მენიუს, კლასიკური საწყისებიდან მზარეულის არჩევანსა და სეზონურ სპეციალობებამდე." data-en="Explore our full Georgian menu, from classic starters to chef's picks and seasonal specialities." data-ru="Изучите наше полное грузинское меню: от классических закусок до выбора шеф-повара и сезонных блюд.">გაეცანით სრულ ქართულ მენიუს, კლასიკური საწყისებიდან მზარეულის არჩევანსა და სეზონურ სპეციალობებამდე.</p>
         <a href="menu.html" class="btn btn-gold" style="margin-top:28px;display:inline-block" data-ge="სრული მენიუ" data-en="View Full Menu" data-ru="Полное меню">სრული მენიუ</a>
@@ -247,10 +337,10 @@
 <div id="wines">
   <div class="split-inner">
     <div class="split-text fi">
-      <p class="sec-label" data-ge="ღვინის კოლექცია" data-en="Wine Collection" data-ru="Винная коллекция">ღვინის კოლექცია</p>
+      <p class="sec-label" data-ge="სასმელები" data-en="Drinks" data-ru="Напитки">ღვინის კოლექცია</p>
       <h2 class="sec-h2" data-ge="ღვინის კოლექცია" data-en="Wine Collection" data-ru="Винная коллекция">ღვინის კოლექცია</h2>
-      <p class="sec-p" data-ge="საქართველო ერთ-ერთი უძველესი ღვინის წარმოების ქვეყანაა, 8000 წლიანი ტრადიციით. თავლაში ვაწარმოებთ ყურადღებით შერჩეულ აუთენტურ ქართულ ღვინოებს. ჩვენი ღვინის სია შექმნილია ქართული სამზარეულოს სრულყოფილად დასამატებლად და თბილისში ქართული გამოცდილების ასამაღლებლად." data-en="Georgia is one of the world's oldest wine-producing nations, with a winemaking tradition dating back 8,000 years. At Tavla, we proudly present a carefully curated selection of authentic Georgian wines. Our wine list is designed to perfectly complement our Georgian cuisine and elevate your Georgian dining experience in Tbilisi." data-ru="Грузия, одна из старейших винодельческих стран мира с 8000-летней традицией. В Тавле мы с гордостью представляем тщательно подобранную коллекцию аутентичных грузинских вин. Наш винный список создан для идеального сочетания с грузинской кухней и незабываемого ужина в Тбилиси.">საქართველო ერთ-ერთი უძველესი ღვინის წარმოების ქვეყანაა, 8000 წლიანი ტრადიციით. თავლაში ვაწარმოებთ ყურადღებით შერჩეულ აუთენტურ ქართულ ღვინოებს. ჩვენი ღვინის სია შექმნილია ქართული სამზარეულოს სრულყოფილად დასამატებლად და თბილისში ქართული გამოცდილების ასამაღლებლად.</p>
-      <p class="sec-p" style="margin-top:14px" data-ge="გაეცანით ტრადიციულ ქართულ ქვივინოს კლასიკურ წითელ და თეთალ ღვინოებთან ერთად. ყველა ხელით არჩეულია ჩვენი მენიუსთან შესანიშნავი შეწყვილებისთვის." data-en="Explore traditional Georgian amber wines alongside classic reds and whites, all handpicked to pair beautifully with our Georgian menu." data-ru="Откройте для себя традиционное грузинское янтарное вино наряду с классическими красными и белыми, все вина подобраны для идеального сочетания с нашим меню.">გაეცანით ტრადიციულ ქართულ ქვივინოს კლასიკურ წითელ და თეთალ ღვინოებთან ერთად. ყველა ხელით არჩეულია ჩვენი მენიუსთან შესანიშნავი შეწყვილებისთვის.</p>
+      <p class="sec-p" data-ge="საქართველო ერთ-ერთი უძველესი ღვინის წარმოების ქვეყანაა, 8000 წლიანი ტრადიციით." data-en="Georgia is one of the world's oldest wine-producing nations, with a winemaking tradition dating back 8,000 years." data-ru="Грузия, одна из старейших винодельческих стран мира с 8000-летней традицией.">საქართველო ერთ-ერთი უძველესი ღვინის წარმოების ქვეყანაა, 8000 წლიანი ტრადიციით. თავლაში ვაწარმოებთ ყურადღებით შერჩეულ აუთენტურ ქართულ ღვინოებს. ჩვენი ღვინის სია შექმნილია ქართული სამზარეულოს სრულყოფილად დასამატებლად და თბილისში ქართული გამოცდილების ასამაღლებლად.</p>
+      <p class="sec-p" style="margin-top:14px" data-ge="გაეცანით ტრადიციულ ქართულ წითელ და თეთრ ღვინოებს. ყველა ხელით არჩეულია ჩვენი მენიუსთან შესანიშნავი შეწყვილებისთვის." data-en="Explore traditional Georgian amber wines alongside classic reds and whites, all handpicked to pair beautifully with our Georgian menu." data-ru="Откройте для себя традиционные грузинские вина, а также классические красные и белые сорта. все они были тщательно отобраны, чтобы идеально дополнить блюда нашего грузинского меню.">გაეცანით ტრადიციულ ქართულ ქვივინოს კლასიკურ წითელ და თეთალ ღვინოებთან ერთად. ყველა ხელით არჩეულია ჩვენი მენიუსთან შესანიშნავი შეწყვილებისთვის.</p>
       <a href="#reservation" class="btn btn-outline-d" style="margin-top:28px;display:inline-block" data-ge="ღვინოების ნახვა" data-en="Explore Wines" data-ru="Смотреть вина">ღვინოების ნახვა</a>
     </div>
     <div class="split-img fi">
@@ -266,9 +356,9 @@
       <img src="images/index-chefs-pick.png" alt="Live music at Tavla"/>
     </div>
     <div class="split-text dark fi">
-      <p class="sec-label" data-ge="ცოცხალი მუსიკა" data-en="Live Music" data-ru="Живая музыка">ცოცხალი მუსიკა</p>
+      <p class="sec-label" data-ge="გარემო" data-en="Environment" data-ru="Окружение">ცოცხალი მუსიკა</p>
       <h2 class="sec-h2" data-ge="ცოცხალი მუსიკა" data-en="Live Music" data-ru="Живая музыка">ცოცხალი მუსიკა</h2>
-      <p class="sec-p" data-ge="გამოიცადეთ ცოცხალი ქართული მუსიკა თავლაში: ტრადიციული პოლიფონია, ფიდლინი და ქართული სასიამოვნო საღამოს ატმოსფერო. ჩვენი ღამოები აერთიანებს აუთენტურ გემოებს, თბილ ოჯახურობასა და ცოცხალ მუსიკას, რაც თბილისში უნიკალურ გამოცდილებას ქმნის. დაჯავშნეთ მაგიდა და ისიამოვნეთ საღამოს." data-en="Experience live Georgian music at Tavla, with traditional polyphony, fiddle, and the warmth of a true Georgian evening. Our nights bring together authentic flavours, hospitality, and live performances for an unforgettable atmosphere in Tbilisi. Reserve your table and enjoy the evening." data-ru="Насладитесь живой грузинской музыкой в Тавле: традиционная полифония, скрипка и атмосфера настоящего грузинского вечера. Наши вечера объединяют аутентичные вкусы, гостеприимство и живые выступления для незабываемой атмосферы в Тбилиси. Забронируйте стол и насладитесь вечером.">გამოიცადეთ ცოცხალი ქართული მუსიკა თავლაში: ტრადიციული პოლიფონია, ფიდლინი და ქართული სასიამოვნო საღამოს ატმოსფერო. ჩვენი ღამოები აერთიანებს აუთენტურ გემოებს, თბილ ოჯახურობასა და ცოცხალ მუსიკას, რაც თბილისში უნიკალურ გამოცდილებას ქმნის. დაჯავშნეთ მაგიდა და ისიამოვნეთ საღამოს.</p>
+      <p class="sec-p" data-ge="ცოცხალი მუსიკა თავლაში: ტრადიციული, ჯაზი და ქართული სასიამოვნო საღამოს ატმოსფერო. დაჯავშნეთ მაგიდა და ისიამოვნეთ საღამოს." data-en="Experience live music at Tavla, with traditional, Jazz, and the warmth of a true Georgian evening. Reserve your table and enjoy the evening." data-ru="Насладитесь живой музыкой в ​​Tavla: традиционные мелодии, джаз и неповторимая атмосфера настоящего грузинского вечера. Забронируйте столик и проведите чудесный вечер.">გამოიცადეთ ცოცხალი ქართული მუსიკა თავლაში: ტრადიციული პოლიფონია, ფიდლინი და ქართული სასიამოვნო საღამოს ატმოსფერო. ჩვენი ღამოები აერთიანებს აუთენტურ გემოებს, თბილ ოჯახურობასა და ცოცხალ მუსიკას, რაც თბილისში უნიკალურ გამოცდილებას ქმნის. დაჯავშნეთ მაგიდა და ისიამოვნეთ საღამოს.</p>
       <a href="#reservation" class="btn btn-gold" style="margin-top:28px;display:inline-block" data-ge="მაგიდის დაჯავშნა" data-en="Reserve a Table" data-ru="Забронировать стол">მაგიდის დაჯავშნა</a>
     </div>
   </div>
@@ -359,7 +449,7 @@
   <div class="container">
     <div class="footer-grid">
       <div>
-        <div class="foot-brand"><img src="images/tavla-nav-hero.png" alt="Tavla" class="foot-logo"/></div>
+        <div class="foot-brand"><img src="images/tavla-nav-hero.png" alt="Tavla Georgian Restaurant, Tbilisi" class="foot-logo"/></div>
         <p class="foot-about" data-ge="თავლა არის ტრადიციული ქართული რესტორანი თბილისში, საქართველოში, რომელიც გთავაზობთ აუთენტურ ქართულ საკვებს, ხაჭაპურს, ხინკალს, ქართულ პურს, ბარბეკიუს, ფაინდაინინგსა და პრემიუმ ქართულ ღვინოებს. დაარსებული 2009 წელს." data-en="Tavla Restaurant is a traditional Georgian restaurant in Tbilisi, Georgia, offering authentic Georgian food, Khachapuri, Khinkali, Georgian bread, BBQ, fine dining, and premium Georgian wines. Established 2009." data-ru="Ресторан Тавла, традиционный грузинский ресторан в Тбилиси, предлагающий аутентичную грузинскую кухню, хачапури, хинкали, грузинский хлеб, барбекю, изысканные блюда и премиальные грузинские вина. Основан в 2009 году.">თავლა არის ტრადიციული ქართული რესტორანი თბილისში, საქართველოში, რომელიც გთავაზობთ აუთენტურ ქართულ საკვებს, ხაჭაპურს, ხინკალს, ქართულ პურს, ბარბეკიუს, ფაინდაინინგსა და პრემიუმ ქართულ ღვინოებს. დაარსებული 2009 წელს.</p>
       </div>
       <div>
@@ -413,11 +503,6 @@
 <script>
   var currentLang = 'ge';
   var langLabels = {ge:'GE', en:'EN', ru:'RU'};
-  var pageTitles = {
-    ge: 'Tavla | თავლა – ქართული რესტორანი თბილისში',
-    en: 'Tavla | თავლა – Georgian Restaurant in Tbilisi',
-    ru: 'Tavla | თავლა – Грузинский ресторан в Тбилиси'
-  };
   var resBtnLabels = {
     ge: 'მაგიდის დაჯავშნა',
     en: 'Reserve Table',
@@ -523,7 +608,7 @@
       if(p!==null)inp.placeholder=p;
     });
     document.documentElement.lang=lang==='ge'?'ka':lang;
-    document.title=pageTitles[lang];
+    updateSeoMeta(lang);
     updateLangDropdowns(lang);
     localStorage.setItem('tavla-lang',lang);
   }

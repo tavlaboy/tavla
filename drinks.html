@@ -3,15 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>სასმელები | Tavla თავლა – ქართული რესტორანი თბილისში</title>
-  <meta name="description" content="თავლას სასმელების მენიუ — ქართული ღვინო, ჭაჭა, კონიაკი, ვისკი, ლუდი, გამაგრილებელი სასმელები და სხვა. ავთენტური ქართული რესტორანი თბილისში." />
+  <title>სასმელები | Tavla თავლა</title>
+  <meta name="description" content="თავლას სასმელების მენიუ — ქართული ღვინო, ჭაჭა, კონიაკი, ლუდი და სხვა. ქართული რესტორანი თბილისში." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0e0c0a" />
+  <link rel="canonical" href="https://tavla-tbilisi.com/drinks.html" />
+  <meta property="og:site_name" content="Tavla | თავლა" />
+  <meta property="og:locale" content="ka_GE" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:locale:alternate" content="ru_RU" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@300;400;500;600&family=Noto+Sans+Georgian:wght@300;400;500;600&family=Noto+Serif+Georgian:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="js/lenis.css" />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" type="image/png" href="images/favicon.png" />
   <style>
     body { background: #0e0c0a; }
 
@@ -47,7 +58,7 @@
       padding: 0 24px;
     }
     .menu-hero-content h1 {
-      font-family: 'Playfair Display', serif;
+      font-family: var(--font-serif);
       font-size: clamp(2.8rem, 6vw, 5rem);
       font-weight: 500;
       color: var(--gold);
@@ -100,7 +111,7 @@
       border: 1px solid rgba(255,255,255,.25);
       color: rgba(255,255,255,.7);
       padding: 9px 22px;
-      font-family: 'Poppins', sans-serif;
+      font-family: var(--font-sans);
       font-size: .7rem;
       letter-spacing: .1em;
       text-transform: uppercase;
@@ -137,7 +148,7 @@
       border: none;
     }
     .menu-section-hdr h2 {
-      font-family: 'Playfair Display', serif;
+      font-family: var(--font-serif);
       font-size: clamp(1.6rem, 3vw, 2.4rem);
       font-weight: 500;
       color: #fff;
@@ -162,7 +173,7 @@
     .menu-item:hover { background: rgba(255,255,255,.065); border-color: rgba(216,180,106,.2); }
     .menu-item-info { display: flex; flex-direction: column; gap: 4px; }
     .menu-item-name {
-      font-family: 'Playfair Display', serif;
+      font-family: var(--font-serif);
       font-size: 1.08rem;
       color: var(--gold);
       line-height: 1.3;
@@ -199,7 +210,7 @@
     .lang-current {
       background: none; border: none;
       color: rgba(255,255,255,.82);
-      font-family: 'Poppins', sans-serif;
+      font-family: var(--font-sans);
       font-size: .7rem; font-weight: 600;
       letter-spacing: .12em; text-transform: uppercase;
       cursor: pointer; padding: 5px 8px;
@@ -230,7 +241,7 @@
       display: block; width: 100%;
       background: none; border: none;
       color: rgba(255,255,255,.55);
-      font-family: 'Poppins', sans-serif;
+      font-family: var(--font-sans);
       font-size: .7rem; font-weight: 500;
       letter-spacing: .12em; text-transform: uppercase;
       cursor: pointer; padding: 7px 14px;
@@ -248,6 +259,30 @@
       .nav-actions .lang-drop-menu { right: 0; left: auto; }
     }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://tavla-tbilisi.com/#website",
+        "url": "https://tavla-tbilisi.com/",
+        "name": "Tavla",
+        "alternateName": "თავლა"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://tavla-tbilisi.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Drinks", "item": "https://tavla-tbilisi.com/drinks.html"}
+        ]
+      }
+    ]
+  }
+  </script>
+  <script src="js/seo-config.js"></script>
+  <script src="js/seo.js"></script>
+  <script>initSeo('drinks', localStorage.getItem('tavla-lang') || 'ge');</script>
 </head>
 <body>
 
@@ -267,7 +302,7 @@
 <nav class="navbar" id="navbar">
   <div class="navbar-inner">
     <a href="index.html" class="nav-brand" aria-label="Tavla home">
-      <img src="images/tavla-nav-hero.png" alt="Tavla" class="nav-logo"/>
+      <img src="images/tavla-nav-hero.png" alt="Tavla Georgian Restaurant, Tbilisi" class="nav-logo"/>
     </a>
     <ul class="nav-menu">
       <li><a href="index.html" data-ge="მთავარი" data-en="Home" data-ru="Главная">მთავარი</a></li>
@@ -303,7 +338,7 @@
 
 <!-- HERO -->
 <section class="menu-hero">
-  <div class="menu-hero-bg"></div>
+  <div class="menu-hero-bg" role="img" aria-label="Georgian wine and drinks at Tavla"></div>
   <div class="menu-hero-overlay"></div>
   <div class="menu-hero-content fi">
     <h1 data-ge="სასმელები" data-en="Drinks" data-ru="Напитки">სასმელები</h1>
@@ -315,7 +350,7 @@
 <div class="menu-info-bar">
   <div class="mib-item">
     <i class="fa fa-wine-glass"></i>
-    <span data-ge="საქართველო მსოფოლიოს უძველეს ღვინის რეგიონთა ერთ-ერთია — ჩვენ ამაყად გთავაზობთ ავთენტურ ქართულ ღვინოებს ადგილობრივი მეურნეობებიდან" data-en="Georgia is one of the world's oldest wine regions — we proudly serve authentic Georgian wines from local estates" data-ru="Грузия — один из старейших винодельческих регионов мира. Мы с гордостью подаём аутентичные грузинские вина от местных производителей">საქართველო მსოფოლიოს უძველეს ღვინის რეგიონთა ერთ-ერთია — ჩვენ ამაყად გთავაზობთ ავთენტურ ქართულ ღვინოებს ადგილობრივი მეურნეობებიდან</span>
+    <span data-ge="საქართველო მსოფოლიოს უძველესი ღვინოს რეგიონია, ადგილობრივი მეურნეობის საუკეთესო არჩევანი." data-en="Georgia is the world's oldest wine region, we proudly serve best wine from local estates" data-ru="Грузия старейший винодельческий регион мира. мы с гордостью предлагаем лучшие вина.">საქართველო მსოფოლიოს უძველეს ღვინის რეგიონთა ერთ-ერთია — ჩვენ ამაყად გთავაზობთ ავთენტურ ქართულ ღვინოებს ადგილობრივი მეურნეობებიდან</span>
   </div>
   <div class="mib-divider"></div>
   <div class="mib-item">
@@ -345,55 +380,55 @@
     <!-- ══ WHITE WINE ══ -->
     <div class="menu-section fi" data-section="white-wine">
       <div class="menu-section-hdr">
-        <img src="images/drinks-rkawiteli-wine.png" alt="White Wine" class="menu-sec-img"/>
+        <img src="images/drinks-rkawiteli-wine.png" alt="White wine at Tavla" class="menu-sec-img"/>
         <h2 data-ge="თეთრი ღვინო" data-en="White Wine" data-ru="Белое вино">თეთრი ღვინო</h2>
       </div>
       <div class="menu-items-grid">
         <div class="menu-item">
           <div class="menu-item-info">
-            <span class="menu-item-name" data-ge="რკაციტელი კახური" data-en="Rkatsiteli Kakhetian" data-ru="Ркацители кахетинский">რკაციტელი კახური</span>
+            <span class="menu-item-name" data-ge="რქაწითელი კახური" data-en="Rkatsiteli Kakhetian" data-ru="Ркацители кахетинский">რქაწითელი კახური</span>
             <span class="menu-item-desc" data-ge="1 ლიტრი · Twins Wine House" data-en="1 litre · Twins Wine House" data-ru="1 литр · Twins Wine House">1 ლიტრი · Twins Wine House</span>
           </div>
           <span class="menu-item-price">₾10</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <span class="menu-item-name" data-ge="რკაციტელი ევროპული" data-en="Rkatsiteli European" data-ru="Ркацители европейский">რკაციტელი ევროპული</span>
+            <span class="menu-item-name" data-ge="რქაწითელი ევროპული" data-en="Rkatsiteli European" data-ru="Ркацители европейский">რქაწითელი ევროპული</span>
             <span class="menu-item-desc" data-ge="1 ლიტრი · Telavi Marani" data-en="1 litre · Telavi Marani" data-ru="1 литр · Telavi Marani">1 ლიტრი · Telavi Marani</span>
           </div>
           <span class="menu-item-price">₾10</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <span class="menu-item-name" data-ge="რკაციტელი" data-en="Rkatsiteli" data-ru="Ркацители">რკაციტელი</span>
+            <span class="menu-item-name" data-ge="რკაწითელი" data-en="Rkatsiteli" data-ru="Ркацители">რკაწითელი</span>
             <span class="menu-item-desc" data-ge="1 ლიტრი" data-en="1 litre" data-ru="1 литр">1 ლიტრი</span>
           </div>
           <span class="menu-item-price">₾18</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <span class="menu-item-name" data-ge="კონდოლი მშრელი" data-en="Kondoli w/dry" data-ru="Кондоли сухое">კონდოლი მშრელი</span>
+            <span class="menu-item-name" data-ge="კონდოლი მშრალი" data-en="Kondoli w/dry" data-ru="Кондоли сухое">კონდოლი მშრალი</span>
             <span class="menu-item-desc">Telavi Marani</span>
           </div>
           <span class="menu-item-price">₾30</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <span class="menu-item-name" data-ge="კონდოლი მშრელი" data-en="Kondoli w/dry" data-ru="Кондоли сухое">კონდოლი მშრელი</span>
+            <span class="menu-item-name" data-ge="კონდოლი მშრალი" data-en="Kondoli w/dry" data-ru="Кондоли сухое">კონდოლი მშრალი</span>
             <span class="menu-item-desc">Telavi Marani</span>
           </div>
           <span class="menu-item-price">₾40</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <span class="menu-item-name" data-ge="თვიში ნახევრად მშრელი" data-en="Tvishi w/semi-dry" data-ru="Твиши полусухое">თვიში ნახევრად მშრელი</span>
+            <span class="menu-item-name" data-ge="ტვიში ნახევრად მშრალი" data-en="Tvishi w/semi-dry" data-ru="Твиши полусухое">ტვიში ნახევრად მშრალი</span>
             <span class="menu-item-desc">Telavi Marani</span>
           </div>
           <span class="menu-item-price">₾45</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <span class="menu-item-name" data-ge="შამპანური „ბაგრატიონი"" data-en="Champagne &quot;Bagrationi&quot;" data-ru="Шампанское «Багратиони»">შამპანური „ბაგრატიონი"</span>
+            <span class="menu-item-name" data-ge="შამპანიური  „ბაგრატიონი"" data-en="Champagne &quot;Bagrationi&quot;" data-ru="Шампанское «Багратиони»">შამპანიური  „ბაგრატიონი"</span>
           </div>
           <span class="menu-item-price">₾20</span>
         </div>
@@ -403,7 +438,7 @@
     <!-- ══ RED WINE ══ -->
     <div class="menu-section fi" data-section="red-wine">
       <div class="menu-section-hdr">
-        <img src="images/drinks-kindzmarauli-wine.png" alt="Red Wine" class="menu-sec-img"/>
+        <img src="images/drinks-kindzmarauli-wine.png" alt="Red wine at Tavla" class="menu-sec-img"/>
         <h2 data-ge="წითელი ღვინო" data-en="Red Wine" data-ru="Красное вино">წითელი ღვინო</h2>
       </div>
       <div class="menu-items-grid">
@@ -416,21 +451,21 @@
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <span class="menu-item-name" data-ge="საფერავი მშრელი" data-en="Saperavi r/dry" data-ru="Саперави сухое">საფერავი მშრელი</span>
+            <span class="menu-item-name" data-ge="საფერავი მშრალი" data-en="Saperavi r/dry" data-ru="Саперави сухое">საფერავი მშრალი</span>
             <span class="menu-item-desc" data-ge="1 ლიტრი · Telavi Marani" data-en="1 litre · Telavi Marani" data-ru="1 литр · Telavi Marani">1 ლიტრი · Telavi Marani</span>
           </div>
           <span class="menu-item-price">₾25</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <span class="menu-item-name" data-ge="თავყვერი მშრელი" data-en="Tavkveri r/dry" data-ru="Тавквери сухое">თავყვერი მშრელი</span>
+            <span class="menu-item-name" data-ge="თავკვერი მშრალი" data-en="Tavkveri r/dry" data-ru="Тавквери сухое">თავკვერი მშრალი</span>
             <span class="menu-item-desc">Shato Mukhrani</span>
           </div>
           <span class="menu-item-price">₾40</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <span class="menu-item-name" data-ge="კინძმარაული ნახევრად ტკბილი" data-en="Kindzmarauli r/semi-sweet" data-ru="Киндзмараули полусладкое">კინძმარაული ნახევრად ტკბილი</span>
+            <span class="menu-item-name" data-ge="ქინძმარაული ნახევრად ტკბილი" data-en="Kindzmarauli r/semi-sweet" data-ru="Киндзмараули полусладкое">ქინძმარაული ნახევრად ტკბილი</span>
             <span class="menu-item-desc">Telavi Marani</span>
           </div>
           <span class="menu-item-price">₾35</span>
@@ -445,7 +480,7 @@
         <div class="menu-item">
           <div class="menu-item-info">
             <span class="menu-item-name" data-ge="საფერავი (Tbilvino)" data-en="Saperavi (Tbilvino)" data-ru="Саперави (Тбилвино)">საფერავი (Tbilvino)</span>
-            <span class="menu-item-desc" data-ge="წითელი მშრელი ღვინო" data-en="Red dry wine" data-ru="Красное сухое вино">წითელი მშრელი ღვინო</span>
+            <span class="menu-item-desc" data-ge="წითელი მშრალი ღვინო" data-en="Red dry wine" data-ru="Красное сухое вино">წითელი მშრალი ღვინო</span>
           </div>
           <span class="menu-item-price">₾20</span>
         </div>
@@ -455,7 +490,7 @@
     <!-- ══ VODKA & SPIRITS ══ -->
     <div class="menu-section fi" data-section="spirits">
       <div class="menu-section-hdr">
-        <img src="images/drinks-chacha.png" alt="Vodka & Spirits" class="menu-sec-img"/>
+        <img src="images/drinks-chacha.png" alt="Chacha and spirits at Tavla" class="menu-sec-img"/>
         <h2 data-ge="არაყი " data-en="Vodka &amp; Spirits" data-ru="Водка и крепкий алкоголь">არაყი </h2>
       </div>
       <div class="menu-items-grid">
@@ -474,89 +509,89 @@
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <span class="menu-item-name">Zelionaya Marka</span>
+            <span class="menu-item-name" data-ge="ზელიონაია მარკა" data-en="Zelonaya Marka" data-ru="Зелёная Марка">Zelionaya Marka</span>
           </div>
           <span class="menu-item-price">₾28</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <span class="menu-item-name">Khortica Silver</span>
+            <span class="menu-item-name" data-ge="ხორტიკა სილვერი" data-en="Khortica Platina" data-ru="Хортица Silver">Khortica Silver</span>
           </div>
           <span class="menu-item-price">₾28</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <span class="menu-item-name">Khortica Platina</span>
+            <span class="menu-item-name" data-ge="ხორტიკა პლატინა" data-en="Khortica Platina" data-ru="Хортица Platina">Khortica Platina</span>
           </div>
           <span class="menu-item-price">₾30</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <span class="menu-item-name">Parlament Classic</span>
+            <span class="menu-item-name" data-ge="პარლამენტ კლასიკი" data-en="Parliament Classic" data-ru="Парламент Classic">Parlament Classic</span>
           </div>
           <span class="menu-item-price">₾32</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <span class="menu-item-name">Celsi</span>
-            <span class="menu-item-desc" data-ge="Lux / Original / Classic" data-en="Lux / Original / Classic" data-ru="Lux / Original / Classic">Lux / Original / Classic</span>
+            <span class="menu-item-name" data-ge="ცელსიუსი" data-en="Celsius" data-ru="Celsius">Celsi</span>
+            <span class="menu-item-desc" data-ge="ლუქსი / ორიგინალი / კლასიკი" data-en="Lux / Original / Classic" data-ru="Lux / Original / Classic">Lux / Original / Classic</span>
           </div>
           <span class="menu-item-price">₾28</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <span class="menu-item-name">Nemirof</span>
+            <span class="menu-item-name" data-ge="ნემიროფ" data-en="Nemiroff" data-ru="Немирофф">Nemirof</span>
           </div>
           <span class="menu-item-price">₾32</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <span class="menu-item-name">Medof Classic</span>
+            <span class="menu-item-name" data-ge="მედოფ კლასიკი" data-en="Medoff Classic" data-ru="Медофф Classic">Medof Classic</span>
           </div>
           <span class="menu-item-price">₾27</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <span class="menu-item-name">Medof Original</span>
+            <span class="menu-item-name" data-ge="მედოფ ორიგინალი" data-en="Medoff Original" data-ru="Медофф Original">Medof Original</span>
           </div>
           <span class="menu-item-price">₾30</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <span class="menu-item-name">Danzka</span>
+            <span class="menu-item-name" data-ge="დანზკა" data-en="Danzka" data-ru="Danzka">Danzka</span>
           </div>
           <span class="menu-item-price">₾40</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <span class="menu-item-name">Stalichnaya</span>
+            <span class="menu-item-name" data-ge="სტალიჩნაია" data-en="Stolichnaya" data-ru="Столичная">Stalichnaya</span>
           </div>
           <span class="menu-item-price">₾40</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <span class="menu-item-name">Finlandia</span>
+            <span class="menu-item-name" data-ge="ფინლანდია" data-en="Finlandia" data-ru="Finlandia">Finlandia</span>
             <span class="menu-item-desc" data-ge="50 გრ · 4.20 ₾" data-en="50g – 4.20 gel" data-ru="50 г — 4.20 ₾">50 გრ · 4.20 ₾</span>
           </div>
           <span class="menu-item-price">₾45</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <span class="menu-item-name">Absolut</span>
+            <span class="menu-item-name" data-ge="აბსოლუტი" data-en="Absolut" data-ru="Absolut">Absolut</span>
             <span class="menu-item-desc" data-ge="50 გრ · 4.50 ₾" data-en="50g – 4.50 gel" data-ru="50 г — 4.50 ₾">50 გრ · 4.50 ₾</span>
           </div>
           <span class="menu-item-price">₾45</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <span class="menu-item-name">Tequila</span>
+            <span class="menu-item-name" data-ge="ტეკილა" data-en="Tequila" data-ru="Текила">Tequila</span>
             <span class="menu-item-desc" data-ge="50 გრ · 8 ₾" data-en="50g – 8 gel" data-ru="50 г — 8 ₾">50 გრ · 8 ₾</span>
           </div>
           <span class="menu-item-price">₾8</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <span class="menu-item-name">Gin Beefeater</span>
+            <span class="menu-item-name" data-ge="ჯინ Beefeater" data-en="Beefeater Gin" data-ru="Джин Beefeater">Gin Beefeater</span>
             <span class="menu-item-desc" data-ge="50 გრ · 5 ₾" data-en="50g – 5 gel" data-ru="50 г — 5 ₾">50 გრ · 5 ₾</span>
           </div>
           <span class="menu-item-price">₾5</span>
@@ -569,7 +604,7 @@
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <span class="menu-item-name">Martini</span>
+            <span class="menu-item-name" data-ge="მარტინი" data-en="Martini" data-ru="Мартини">Martini</span>
             <span class="menu-item-desc" data-ge="50 გრ · 7 ₾" data-en="50g – 7 gel" data-ru="50 г — 7 ₾">50 გრ · 7 ₾</span>
           </div>
           <span class="menu-item-price">₾7</span>
@@ -588,7 +623,7 @@
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <span class="menu-item-name" data-ge="ჭაჭა · ხის კარაში დავარგებული" data-en="Chacha · Aged in Oak" data-ru="Чача · выдержанная в дубе">ჭაჭა · ხის კარაში დავარგებული</span>
+            <span class="menu-item-name" data-ge="ჭაჭა · ხის კასრში დაძველებული" data-en="Chacha · Aged in Oak" data-ru="Чача · выдержанная в дубе">ჭაჭა · ხის კარაში დავარგებული</span>
           </div>
           <span class="menu-item-price">₾24</span>
         </div>
@@ -600,7 +635,7 @@
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <span class="menu-item-name">Eari</span>
+            <span class="menu-item-name" data-ge="ეარი" data-en="Eari" data-ru="Эари">Eari</span>
           </div>
           <span class="menu-item-price">₾24</span>
         </div>
@@ -610,7 +645,7 @@
     <!-- ══ COGNAC ══ -->
     <div class="menu-section fi" data-section="cognac">
       <div class="menu-section-hdr">
-        <img src="images/drinks-cognac.png" alt="Cognac" class="menu-sec-img"/>
+        <img src="images/drinks-cognac.png" alt="Cognac at Tavla" class="menu-sec-img"/>
         <h2 data-ge="კონიაკი" data-en="Cognac" data-ru="Коньяк">კონიაკი</h2>
       </div>
       <div class="menu-items-grid">
@@ -629,7 +664,7 @@
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <span class="menu-item-name">Hennessy V.S.O.P.</span>
+            <span class="menu-item-name" data-ge="ჰენესი" data-en="Hennessy V.S.O.P." data-ru="Hennessy V.S.O.P.">Hennessy V.S.O.P.</span>
             <span class="menu-item-desc" data-ge="50 გრ · 15 ₾" data-en="50g – 15 gel" data-ru="50 г — 15 ₾">50 გრ · 15 ₾</span>
           </div>
           <span class="menu-item-price">₾15</span>
@@ -640,34 +675,34 @@
     <!-- ══ WHISKEY ══ -->
     <div class="menu-section fi" data-section="whiskey">
       <div class="menu-section-hdr">
-        <img src="images/drinks-whiskey.png" alt="Whiskey" class="menu-sec-img"/>
+        <img src="images/drinks-whiskey.png" alt="Whiskey at Tavla" class="menu-sec-img"/>
         <h2 data-ge="ვისკი" data-en="Whiskey" data-ru="Виски">ვისკი</h2>
       </div>
       <div class="menu-items-grid">
         <div class="menu-item">
           <div class="menu-item-info">
-            <span class="menu-item-name">Johnnie Walker Red</span>
+            <span class="menu-item-name" data-ge="ჯონი ვოკერი წითელი" data-en="Johnnie Walker Red Label" data-ru="Johnnie Walker Red Label">Johnnie Walker Red</span>
             <span class="menu-item-desc" data-ge="50 გრ · 7 ₾" data-en="50g – 7 gel" data-ru="50 г — 7 ₾">50 გრ · 7 ₾</span>
           </div>
           <span class="menu-item-price">₾7</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <span class="menu-item-name">Johnnie Walker Black</span>
+            <span class="menu-item-name" data-ge="ჯონი ვოკერი შავი" data-en="Johnnie Walker Black Label" data-ru="Johnnie Walker Black Label">Johnnie Walker Black</span>
             <span class="menu-item-desc" data-ge="50 გრ · 12 ₾" data-en="50g – 12 gel" data-ru="50 г — 12 ₾">50 გრ · 12 ₾</span>
           </div>
           <span class="menu-item-price">₾12</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <span class="menu-item-name">Jack Daniels</span>
+            <span class="menu-item-name" data-ge="ჯეკ დანიელსი" data-en="Jack Daniel's" data-ru="Jack Daniel's">Jack Daniels</span>
             <span class="menu-item-desc" data-ge="50 გრ · 9 ₾" data-en="50g – 9 gel" data-ru="50 г — 9 ₾">50 გრ · 9 ₾</span>
           </div>
           <span class="menu-item-price">₾9</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <span class="menu-item-name">Chivas Regal 12 Years</span>
+            <span class="menu-item-name" data-ge="ჩივას რეგალ 12 წლის" data-en="Chivas Regal 12 Years" data-ru="Chivas Regal 12 лет">Chivas Regal 12 Years</span>
             <span class="menu-item-desc" data-ge="50 გრ · 12 ₾" data-en="50g – 12 gel" data-ru="50 г — 12 ₾">50 გრ · 12 ₾</span>
           </div>
           <span class="menu-item-price">₾12</span>
@@ -678,41 +713,41 @@
     <!-- ══ DRAFT BEER ══ -->
     <div class="menu-section fi" data-section="beer">
       <div class="menu-section-hdr">
-        <img src="images/drinks-beer.png" alt="Draft Beer" class="menu-sec-img"/>
+        <img src="images/drinks-beer.png" alt="Beer at Tavla" class="menu-sec-img"/>
         <h2 data-ge="ლუდი" data-en="Draft Beer" data-ru="Разливное пиво">ლუდი</h2>
       </div>
       <div class="menu-items-grid">
         <div class="menu-item">
           <div class="menu-item-info">
-            <span class="menu-item-name">Hercog</span>
+            <span class="menu-item-name" data-ge="ჰერცოგი" data-en="Herzog" data-ru="Herzog">Hercog</span>
             <span class="menu-item-desc" data-ge="0.4 ლიტრი" data-en="0.4 litre" data-ru="0.4 литра">0.4 ლიტრი</span>
           </div>
           <span class="menu-item-price">₾4</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <span class="menu-item-name">Krombacher</span>
+            <span class="menu-item-name" data-ge="კრომბახერი" data-en="Krombacher" data-ru="Krombacher">Krombacher</span>
             <span class="menu-item-desc" data-ge="0.4 ლიტრი" data-en="0.4 litre" data-ru="0.4 литра">0.4 ლიტრი</span>
           </div>
           <span class="menu-item-price">₾10</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <span class="menu-item-name">Heineken</span>
+            <span class="menu-item-name" data-ge="ჰაინეკენი" data-en="Heineken" data-ru="Heineken">Heineken</span>
             <span class="menu-item-desc" data-ge="0.5 ლიტრი" data-en="0.5 litre" data-ru="0.5 литра">0.5 ლიტრი</span>
           </div>
           <span class="menu-item-price">₾8</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <span class="menu-item-name">Estrella</span>
+            <span class="menu-item-name" data-ge="ესტრელა" data-en="Estrella Damm" data-ru="Estrella Damm">Estrella</span>
             <span class="menu-item-desc" data-ge="0.4 ლიტრი" data-en="0.4 litre" data-ru="0.4 литра">0.4 ლიტრი</span>
           </div>
           <span class="menu-item-price">₾6</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <span class="menu-item-name">Civ-Civi</span>
+            <span class="menu-item-name" data-ge="ცივ-ცივი" data-en="Civ-Civi" data-ru="Civ-Civi">Civ-Civi</span>
             <span class="menu-item-desc" data-ge="0.4 ლიტრი" data-en="0.4 litre" data-ru="0.4 литра">0.4 ლიტრი</span>
           </div>
           <span class="menu-item-price">₾4</span>
@@ -723,7 +758,7 @@
     <!-- ══ SOFT DRINKS ══ -->
     <div class="menu-section fi" data-section="soft-drinks">
       <div class="menu-section-hdr">
-        <img src="images/drinks-soda-water.png" alt="Soft Drinks" class="menu-sec-img"/>
+        <img src="images/drinks-soda-water.png" alt="Soft drinks at Tavla" class="menu-sec-img"/>
         <h2 data-ge="გამაგრილებელი სასმელები" data-en="Soft Drinks" data-ru="Безалкогольные напитки">გამაგრილებელი სასმელები</h2>
       </div>
       <div class="menu-items-grid">
@@ -777,7 +812,7 @@
     <!-- ══ TEA & COFFEE ══ -->
     <div class="menu-section fi" data-section="tea-coffee">
       <div class="menu-section-hdr">
-        <img src="images/drinks-teacoffee.png" alt="Tea & Coffee" class="menu-sec-img"/>
+        <img src="images/drinks-teacoffee.png" alt="Tea and coffee at Tavla" class="menu-sec-img"/>
         <h2 data-ge="ჩაი და ყავა" data-en="Tea &amp; Coffee" data-ru="Чай и кофе">ჩაი და ყავა</h2>
       </div>
       <div class="menu-items-grid">
@@ -829,37 +864,37 @@
     <!-- ══ TOBACCO ══ -->
     <div class="menu-section fi" data-section="tobacco">
       <div class="menu-section-hdr">
-        <img src="images/drinks-smoking.png" alt="Tobacco" class="menu-sec-img"/>
+        <img src="images/drinks-smoking.png" alt="Tobacco at Tavla" class="menu-sec-img"/>
         <h2 data-ge="თამბაქო" data-en="Tobacco" data-ru="Табак">თამბაქო</h2>
       </div>
       <div class="menu-items-grid">
         <div class="menu-item">
           <div class="menu-item-info">
-            <span class="menu-item-name">Sobranie</span>
+            <span class="menu-item-name" data-ge="სობრანიე" data-en="Sobranie" data-ru="Собрание">Sobranie</span>
           </div>
           <span class="menu-item-price">₾12</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <span class="menu-item-name">Parlament</span>
+            <span class="menu-item-name" data-ge="პარლამენტი" data-en="Parliament" data-ru="Парламент">Parlament</span>
           </div>
           <span class="menu-item-price">₾12</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <span class="menu-item-name">Marlboro</span>
+            <span class="menu-item-name" data-ge="მარლბორო" data-en="Marlboro" data-ru="Marlboro">Marlboro</span>
           </div>
           <span class="menu-item-price">₾10</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <span class="menu-item-name">Kent</span>
+            <span class="menu-item-name" data-ge="კენტი" data-en="Kent" data-ru="Kent">Kent</span>
           </div>
           <span class="menu-item-price">₾10</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <span class="menu-item-name">Winston</span>
+            <span class="menu-item-name" data-ge="ვინსტონი" data-en="Winston" data-ru="Winston">Winston</span>
           </div>
           <span class="menu-item-price">₾10</span>
         </div>
@@ -874,7 +909,7 @@
   <div class="container">
     <div class="footer-grid">
       <div>
-        <div class="foot-brand"><img src="images/tavla-nav-hero.png" alt="Tavla" class="foot-logo"/></div>
+        <div class="foot-brand"><img src="images/tavla-nav-hero.png" alt="Tavla Georgian Restaurant, Tbilisi" class="foot-logo"/></div>
         <p class="foot-about" data-ge="თავლა არის ტრადიციული ქართული რესტორანი თბილისში, საქართველოში, რომელიც გთავაზობთ ავთენტურ ქართულ საკვებს, ხაჭაპურს, ხინკალს, ქართულ პურს, ბარბეკიუს, ფაინდაინინგსა და პრემიუმ ქართულ ღვინოებს. დაარსებული 2009 წელს." data-en="Tavla Restaurant is a traditional Georgian restaurant in Tbilisi, Georgia, offering authentic Georgian food, Khachapuri, Khinkali, Georgian bread, BBQ, fine dining, and premium Georgian wines. Established 2009." data-ru="Ресторан Тавла — традиционный грузинский ресторан в Тбилиси, предлагающий аутентичную грузинскую кухню, хачапури, хинкали, грузинский хлеб, барбекю, изысканные блюда и премиальные грузинские вина. Основан в 2009 году.">თავლა არის ტრადიციული ქართული რესტორანი თბილისში, საქართველოში, რომელიც გთავაზობთ ავთენტურ ქართულ საკვებს, ხაჭაპურს, ხინკალს, ქართულ პურს, ბარბეკიუს, ფაინდაინინგსა და პრემიუმ ქართულ ღვინოებს. დაარსებული 2009 წელს.</p>
       </div>
       <div>
@@ -941,11 +976,6 @@
 
   /* ── LANGUAGE ── */
   var langLabels = {ge:'GE', en:'EN', ru:'RU'};
-  var pageTitles = {
-    ge: 'სასმელები | Tavla თავლა',
-    en: 'Drinks | Tavla თავლა – Georgian Restaurant',
-    ru: 'Напитки | Tavla თავლა – Грузинский ресторан'
-  };
 
   function updateLangDropdowns(lang){
     document.querySelectorAll('.lang-dropdown').forEach(function(dd){
@@ -975,7 +1005,7 @@
       if(t!==null) el.textContent=t;
     });
     document.documentElement.lang=lang==='ge'?'ka':lang;
-    document.title=pageTitles[lang];
+    updateSeoMeta(lang);
     updateLangDropdowns(lang);
     localStorage.setItem('tavla-lang',lang);
   }
